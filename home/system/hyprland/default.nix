@@ -46,7 +46,7 @@
       bind = [
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
         "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-        "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser" # Qutebrowser
+        "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu

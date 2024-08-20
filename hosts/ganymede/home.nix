@@ -7,7 +7,7 @@
     ../../home/programs/btop
     ../../home/programs/cava
     ../../home/programs/kitty
-    ../../home/programs/qutebrowser
+    ../../home/programs/firefox
     ../../home/programs/fetch
     ../../home/programs/lf
     ../../home/programs/git
