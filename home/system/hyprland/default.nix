@@ -224,7 +224,7 @@
           "specialWorkspace, 1, ${animationDuration}, md3_decel, slidevert"
         ];
       };
-
     };
   };
+};
 }
