@@ -28,9 +28,6 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
-    hyprland,
-    hyprland-contrib,
     ...
   } @ inputs: let
     inherit (self) outputs;
