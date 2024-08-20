@@ -5,7 +5,7 @@ let
       "config": {
         "title" : "Welcome Home",
         "openLinksInNewTab": false,
-        "locale": "fr-FR",
+        "locale": "en-US",
         "colors": {
           "primary": "#${config.var.theme.colors.accent}",
           "background": "#${config.var.theme.colors.bg}",
@@ -41,36 +41,6 @@ let
     }
   '';
 
-  homepage = pkgs.buildNpmPackage {
-    pname = "homepage";
-    version = "0.0.0";
-
-    src = pkgs.fetchFromGitHub {
-      owner = "anotherhadi";
-      repo = "homepage";
-      rev = "b77d35ed3596eb451bd2ec78063d7cc6e73c773d";
-      hash = "sha256-j/40922kfAh6zqJ4IRYpr66YXNNYsxuXwZ0aiJFJea0=";
-    };
-
-    # npmDepsHash = lib.fakeHash;
-    npmDepsHash = "sha256-bG+CHTq2Rst3JMxsjAC81KhK+G7WwsTVD1eyP87g0z4=";
-
-    buildPhase = ''
-      npm install
-      cp ${
-        pkgs.writeText "src/routes/config.json" settings
-      } src/routes/config.json
-      npm run build
-      mkdir $out
-      mv build $out
-    '';
-
-    meta = {
-      description = "homepage";
-      homepage = "https://github.com/anotherhadi/homepage";
-    };
-  };
-
 in {
 
   imports = [
@@ -94,7 +64,7 @@ in {
     };
 
     quickmarks = {
-      home = "${homepage}/build/index.html";
+      home = "http://jupiter.grey.lan:3000";
       server = "https://home.anotherhadi.com";
       jack = "https://home.anotherhadi.com";
       mynixos = "https://mynixos.com";
@@ -115,8 +85,8 @@ in {
 
     settings = {
       url = {
-        default_page = "${homepage}/build/index.html";
-        start_pages = [ "${homepage}/build/index.html" ];
+        default_page = "http://jupiter.grey.lan:3000";
+        start_pages = [ "http://jupiter.grey.lan:3000" ];
       };
 
       colors = {
@@ -262,8 +232,7 @@ in {
 
     keyBindings = {
       normal = {
-        "gh" = "open ${homepage}/build/index.html";
-        "gs" = "open https://home.anotherhadi.com";
+        "gh" = "open http://jupiter.grey.lan:3000";
 
         " p" = "tab-move -";
         " n" = "tab-move +";

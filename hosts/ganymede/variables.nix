@@ -7,7 +7,7 @@
     homeDirectory = "/home/" + config.var.username;
     configDirectory = config.var.homeDirectory + "/.config/nixos";
 
-    keyboardLayout = "fr";
+    keyboardLayout = "us";
 
     timeZone = "America/Chicago";
     defaultLocale = "en_US.UTF-8";

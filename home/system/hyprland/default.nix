@@ -69,7 +69,7 @@
         "$mod, F2, exec, night-shift-off" # Turn off night shift
         "$mod, F3, exec, night-shift-on" # Turn on night shift
 
-        "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating zsh -c sound-output" # Choose sound output
+        "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating -c sound-output" # Choose sound output
       ] ++ (builtins.concatLists (builtins.genList (i:
         let ws = i + 1;
         in [

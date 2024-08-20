@@ -22,7 +22,7 @@ let
   '';
 
   nerdfont-popup = pkgs.writeShellScriptBin "nerdfont-popup" ''
-    ${pkgs.kitty}/bin/kitty --class floating -o font_size=18 zsh -c nerdfont-fzf 2>/dev/null
+    ${pkgs.kitty}/bin/kitty --class floating -o font_size=18 -c nerdfont-fzf 2>/dev/null
   '';
 
 in {
