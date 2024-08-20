@@ -41,17 +41,16 @@
         "${pkgs.bitwarden}/bin/bitwarden"
       ];
 
-      monitor = [ "eDP-2,highres,0x0,1" ",prefered,auto,1" ];
+      monitor = [ ",3440x1440@120,0x0,1" ];
 
       bind = [
         "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
         "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
         "$mod, B, exec, ${pkgs.qutebrowser}/bin/qutebrowser" # Qutebrowser
-        "$mod, K, exec, ${pkgs.bitwarden}/bin/bitwarden" # Bitwarden
         "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
-        "$mod, SPACE, exec, menu" # Launcher
+        "$mod, R, exec, menu" # Launcher
 
         "$mod, Q, killactive," # Close window
         "$mod, T, togglefloating," # Toggle Floating
@@ -76,23 +75,6 @@
           "$mod, code:1${toString i}, workspace, ${toString ws}"
           "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
         ]) 9));
-
-      bindm = [
-        "$mod, mouse:272, movewindow" # Move Window (mouse)
-        "$mod, R, resizewindow" # Resize Window (mouse)
-      ];
-
-      bindl = [
-        ",XF86AudioMute, exec, sound-toggle" # Toggle Mute
-        ",switch:Lid Switch, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock when closing Lid
-      ];
-
-      bindle = [
-        ", XF86AudioRaiseVolume, exec, sound-up" # Sound Up
-        ", XF86AudioLowerVolume, exec, sound-down" # Sound Down
-        ", XF86MonBrightnessUp, exec, brightness-up" # Brightness Up
-        ", XF86MonBrightnessDown, exec, brightness-down" # Brightness Down
-      ];
 
       env = [
         "XDG_SESSION_TYPE,wayland"
@@ -125,43 +107,57 @@
       };
 
       decoration = {
-        rounding = config.var.theme.rounding;
-        drop_shadow = true;
-        shadow_range = 20;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000055)";
-        blur = { enabled = false; };
+          rounding = 2;
+          active_opacity = 0.95;
+          inactive_opacity = 0.5;
+          # multisample_edges = true;
+          drop_shadow = true;
+          shadow_ignore_window = true;
+          shadow_offset = "0 8";
+          shadow_range = 50;
+          shadow_render_power = 3;
+          "col.shadow" = "rgba(00000099)";
+          blur = {
+            size = 3;
+            passes = 2;
+            new_optimizations = true;
+            ignore_opacity = true;
+            # noise = "0.18";
+            contrast = "1";
+            brightness = "0.9";
+            xray = false;
       };
 
       master = { new_status = true; };
 
-      gestures = { workspace_swipe = true; };
-
       misc = {
         vfr = true;
+        vrr = 1;
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
         focus_on_activate = true;
-        new_window_takes_over_fullscreen = 2;
+        enable_swallow = true;
+        always_follow_on_dnd = true;
+        animate_mouse_windowdragging = true;
+        animate_manual_resizes = true;
+      };
+
+      dwindle = {
+        pseudotile = true;
+        preserve_split = true;
       };
 
       opengl = { nvidia_anti_flicker = false; };
 
       input = {
         kb_layout = config.var.keyboardLayout;
-
         kb_options = "caps:escape";
         follow_mouse = 1;
         sensitivity = 0.5;
         repeat_delay = 300;
         repeat_rate = 50;
         numlock_by_default = true;
-
-        touchpad = {
-          natural_scroll = true;
-          clickfinger_behavior = true;
-        };
       };
 
       windowrule = [ "animation popin,^(wlogout)$" ];

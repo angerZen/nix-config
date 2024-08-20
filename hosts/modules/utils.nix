@@ -15,11 +15,12 @@
   environment.variables = {
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    EDITOR = "nvim";
+    EDITOR = "vscode";
   };
 
   services.libinput.enable = true;
   programs.dconf.enable = true;
+  programs.direnv.enable = true;
   services.dbus.enable = true;
 
   # Faster rebuilding

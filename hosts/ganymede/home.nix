@@ -45,16 +45,14 @@
       optipng
       pfetch
       pandoc
+      pamixer
+      pavucontrol
 
       # Just cool
       peaclock
       cbonsai
       pipes
       cmatrix
-
-      # Backup
-      vscode
-      librewolf
     ];
 
     # Import wallpapers into $HOME/wallpapers

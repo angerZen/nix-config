@@ -36,9 +36,7 @@
           "tray"
           "backlight"
           "pulseaudio"
-          "custom/caffeine"
-          "custom/night-shift"
-          "battery"
+          "pulseaudio#microphone"
           "clock"
           "custom/power"
         ];
@@ -107,7 +105,8 @@
             "headphone" = "";
             "default" = [ "󰖀" "󰕾" "" ];
           };
-          "on-click" = "sound-toggle";
+          "on-click" = "pamixer -t";
+          "on-click-right" = "pavucontrol";
           "scroll-step" = 1;
         };
 
