@@ -6,28 +6,26 @@
 }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.firefox-unwrapped {
-      extraPolicies = {
-        CaptivePortal = false;
-        DisableFirefoxStudies = true;
-        DisablePocket = true;
-        DisableTelemetry = true;
-        DisableFirefoxAccounts = true;
-        NoDefaultBookmarks = true;
-        OfferToSaveLogins = false;
-        OfferToSaveLoginsDefault = false;
-        PasswordManagerEnabled = false;
-        FirefoxHome = {
-          Search = false;
-          Pocket = false;
-          Snippets = false;
-          TopSites = true;
-          Highlights = false;
-        };
-        UserMessaging = {
-          ExtensionRecommendations = false;
-          SkipOnboarding = true;
-        };
+    policies = {
+      CaptivePortal = false;
+      DisableFirefoxStudies = true;
+      DisablePocket = true;
+      DisableTelemetry = true;
+      DisableFirefoxAccounts = true;
+      NoDefaultBookmarks = true;
+      OfferToSaveLogins = false;
+      OfferToSaveLoginsDefault = false;
+      PasswordManagerEnabled = false;
+      FirefoxHome = {
+        Search = false;
+        Pocket = false;
+        Snippets = false;
+        TopSites = true;
+        Highlights = false;
+      };
+      UserMessaging = {
+        ExtensionRecommendations = false;
+        SkipOnboarding = true;
       };
     };
     profiles.default = {

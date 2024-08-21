@@ -26,6 +26,8 @@
     wayland-utils
     wayland-protocols
     meson
+    xwaylandvideobridge
+    mate.mate-polkit
   ];
 
   wayland.windowManager.hyprland = {
@@ -41,13 +43,18 @@
         "startup"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.hyprpaper}/bin/hyprpaper"
+        "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
+        "sleep 5 && discord --start-minimized &"
+        "exec systemctl --user import-environment PATH"
+        "systemctl --user restart xdg-desktop-portal.service"
       ];
 
       monitor = [",3440x1440@120,0x0,1"];
 
       bind =
         [
-          "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
+          "$mod, T, exec, ${pkgs.kitty}/bin/kitty" # Kitty
           "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
           "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
           "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
@@ -56,30 +63,45 @@
           "$mod, R, exec, menu" # Launcher
 
           "$mod, Q, killactive," # Close window
-          "$mod, T, togglefloating," # Toggle Floating
+          "$mod, Space, togglefloating," # Toggle Floating
           "$mod, F, fullscreen" # Toggle Fullscreen
           "$mod, left, movefocus, l" # Move focus left
           "$mod, right, movefocus, r" # Move focus Right
           "$mod, up, movefocus, u" # Move focus Up
           "$mod, down, movefocus, d" # Move focus Down
+          "$mod, mouse_down, workspace, e-1"
+          "$mod, mouse_up, workspace, e+1"
+          # switch workspaces bindings
+          "$mod, 1, workspace, 1"
+          "$mod, 2, workspace, 2"
+          "$mod, 3, workspace, 3"
+          "$mod, 4, workspace, 4"
+          "$mod, 5, workspace, 5"
+          "$mod, 6, workspace, 6"
+          "$mod, 7, workspace, 7"
+          "$mod, 8, workspace, 8"
+          "$mod, 9, workspace, 9"
+          # move windows to workspace bindings
+          "$mod SHIFT, 1, movetoworkspace, 1"
+          "$mod SHIFT, 2, movetoworkspace, 2"
+          "$mod SHIFT, 3, movetoworkspace, 3"
+          "$mod SHIFT, 4, movetoworkspace, 4"
+          "$mod SHIFT, 5, movetoworkspace, 5"
+          "$mod SHIFT, 6, movetoworkspace, 6"
+          "$mod SHIFT, 7, movetoworkspace, 7"
+          "$mod SHIFT, 8, movetoworkspace, 8"
+          "$mod SHIFT, 9, movetoworkspace, 9"
 
           "$mod, PRINT, exec, screenshot window" # Screenshot window
           ", PRINT, exec, screenshot monitor" # Screenshot monitor
           "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
           "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
-
-          "$mod, F2, exec, night-shift-off" # Turn off night shift
-          "$mod, F3, exec, night-shift-on" # Turn on night shift
-
-          "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating -c sound-output" # Choose sound output
         ]
-        ++ (builtins.concatLists (builtins.genList (i: let
-            ws = i + 1;
-          in [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-          ])
-          9));
+        bindm = [
+          "$mod, mouse:272, movewindow"
+          "$mod, mouse:273, resizewindow"
+        ];
+
 
       env = [
         "XDG_SESSION_TYPE,wayland"
@@ -140,7 +162,6 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         disable_autoreload = true;
-        focus_on_activate = true;
         enable_swallow = true;
         always_follow_on_dnd = true;
         animate_mouse_windowdragging = true;
@@ -164,7 +185,11 @@
         numlock_by_default = true;
       };
 
-      windowrule = ["animation popin,^(wlogout)$"];
+      windowrule = [
+        "animation popin,^(wlogout)$"
+        "size 700 450, pavucontrol"
+        "move 1200 72, pavucontrol"
+        ];
 
       windowrulev2 = [
         "float, class:peaclock"

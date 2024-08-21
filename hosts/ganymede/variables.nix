@@ -28,6 +28,6 @@
     usbguard = false;
     usbguardRules = "";
 
-    theme = import ../themes/nixy.nix; # select your theme here
+    theme = import ../themes/catppuccin.nix; # select your theme here
   };
 }

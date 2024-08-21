@@ -1,14 +1,14 @@
 {
-  wallpaper = "nix.png";
+  wallpaper = "wallhaven-zy7z8w.jpg";
 
   font = "SFProDisplay Nerd Font";
   font-mono = "FiraCode Nerd Font Mono";
   font-size = 13;
 
   rounding = 11;
-  gaps-in = 15;
-  gaps-out = 15 * 2;
-  border-size = 5;
+  gaps-in = 4;
+  gaps-out = 8;
+  border-size = 2;
   animation-speed = "medium"; # "fast" | "medium" | "slow"
   fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
 

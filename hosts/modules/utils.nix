@@ -8,7 +8,6 @@
       xkb.layout = config.var.keyboardLayout;
       xkb.variant = "";
     };
-    gnome.gnome-keyring.enable = true;
   };
   console.keyMap = config.var.keyboardLayout;
 
@@ -16,6 +15,19 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     EDITOR = "vscode";
+  };
+
+  security = {
+    sudo.wheelNeedsPassword = false;
+    pam.services = {
+      tuigreet = {};
+      hyprlock = {};
+    };
+  };
+
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "angerzen";
   };
 
   services.libinput.enable = true;
