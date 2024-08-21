@@ -96,7 +96,7 @@
           ", PRINT, exec, screenshot monitor" # Screenshot monitor
           "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
           "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
-        ]
+        ];
         bindm = [
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
