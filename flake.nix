@@ -35,7 +35,7 @@
     # NixOS configuration entrypoint
     nixosConfigurations = {
       ganymede = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {inherit self nixpkgs inputs outputs;};
         # > Our main nixos configuration file <
         modules = [
           inputs.home-manager.nixosModules.home-manager

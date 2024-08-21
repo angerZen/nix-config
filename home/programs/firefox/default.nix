@@ -2,8 +2,7 @@
   pkgs,
   config,
   inputs,
-  self,
-  ...
+       ...
 }: {
   programs.firefox = {
     enable = true;
