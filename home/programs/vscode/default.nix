@@ -73,12 +73,6 @@
         ]
         ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
           {
-            publisher = "dlasagno";
-            name = "wal-theme";
-            version = "1.1.2";
-            sha256 = "vO9FjzA3+5VTgnBY12eawPCfDzKap07Tgf5jqz/IgN0=";
-          }
-          {
             publisher = "zguolee";
             name = "tabler-icons";
             version = "0.2.2";
@@ -86,7 +80,4 @@
           }
         ];
     };
-    home.packages = with pkgs; [
-      inputs.alejandra.defaultPackage.${system}
-    ];
 }

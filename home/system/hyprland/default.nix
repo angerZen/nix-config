@@ -1,7 +1,10 @@
-{ pkgs, config, inputs, ... }: {
-
-  imports =
-    [ ./hyprlocktty.nix ./hypridle.nix ./hyprpaper.nix ./hyprcursor.nix ];
+{
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
+  imports = [./hyprlocktty.nix ./hypridle.nix ./hyprpaper.nix ./hyprcursor.nix];
 
   home.packages = with pkgs; [
     hyprshot
@@ -41,36 +44,38 @@
         "${pkgs.bitwarden}/bin/bitwarden"
       ];
 
-      monitor = [ ",3440x1440@120,0x0,1" ];
+      monitor = [",3440x1440@120,0x0,1"];
 
-      bind = [
-        "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-        "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
-        "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
-        "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-        "$mod, X, exec, powermenu" # Powermenu
-        "$mod, R, exec, menu" # Launcher
+      bind =
+        [
+          "$mod, RETURN, exec, ${pkgs.kitty}/bin/kitty" # Kitty
+          "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+          "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
+          "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
+          "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
+          "$mod, X, exec, powermenu" # Powermenu
+          "$mod, R, exec, menu" # Launcher
 
-        "$mod, Q, killactive," # Close window
-        "$mod, T, togglefloating," # Toggle Floating
-        "$mod, F, fullscreen" # Toggle Fullscreen
-        "$mod, left, movefocus, l" # Move focus left
-        "$mod, right, movefocus, r" # Move focus Right
-        "$mod, up, movefocus, u" # Move focus Up
-        "$mod, down, movefocus, d" # Move focus Down
+          "$mod, Q, killactive," # Close window
+          "$mod, T, togglefloating," # Toggle Floating
+          "$mod, F, fullscreen" # Toggle Fullscreen
+          "$mod, left, movefocus, l" # Move focus left
+          "$mod, right, movefocus, r" # Move focus Right
+          "$mod, up, movefocus, u" # Move focus Up
+          "$mod, down, movefocus, d" # Move focus Down
 
-        "$mod, PRINT, exec, screenshot window" # Screenshot window
-        ", PRINT, exec, screenshot monitor" # Screenshot monitor
-        "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
-        "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
+          "$mod, PRINT, exec, screenshot window" # Screenshot window
+          ", PRINT, exec, screenshot monitor" # Screenshot monitor
+          "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
+          "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
 
-        "$mod, F2, exec, night-shift-off" # Turn off night shift
-        "$mod, F3, exec, night-shift-on" # Turn on night shift
+          "$mod, F2, exec, night-shift-off" # Turn off night shift
+          "$mod, F3, exec, night-shift-on" # Turn on night shift
 
-        "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating -c sound-output" # Choose sound output
-      ] ++ (builtins.concatLists (builtins.genList (i:
-        let ws = i + 1;
+          "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating -c sound-output" # Choose sound output
+        ]
+        ++ (builtins.concatLists (builtins.genList (i: let
+          ws = i + 1;
         in [
           "$mod, code:1${toString i}, workspace, ${toString ws}"
           "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
@@ -93,7 +98,7 @@
         "GTK2_RC_FILES,/home/hadi/.local/share/themes/FlatColor/gtk-2.0/gtkrc"
       ];
 
-      cursor = { no_hardware_cursors = true; };
+      cursor = {no_hardware_cursors = true;};
 
       general = {
         resize_on_border = true;
@@ -107,28 +112,27 @@
       };
 
       decoration = {
-          rounding = 2;
-          active_opacity = 0.95;
-          inactive_opacity = 0.5;
-          # multisample_edges = true;
-          drop_shadow = true;
-          shadow_ignore_window = true;
-          shadow_offset = "0 8";
-          shadow_range = 50;
-          shadow_render_power = 3;
-          "col.shadow" = "rgba(00000099)";
-          blur = {
-            size = 3;
-            passes = 2;
-            new_optimizations = true;
-            ignore_opacity = true;
-            # noise = "0.18";
-            contrast = "1";
-            brightness = "0.9";
-            xray = false;
+        rounding = 2;
+        active_opacity = 0.95;
+        inactive_opacity = 0.5;
+        # multisample_edges = true;
+        drop_shadow = true;
+        shadow_ignore_window = true;
+        shadow_offset = "0 8";
+        shadow_range = 50;
+        shadow_render_power = 3;
+        "col.shadow" = "rgba(00000099)";
+        blur = {
+          size = 3;
+          passes = 2;
+          new_optimizations = true;
+          ignore_opacity = true;
+          # noise = "0.18";
+          contrast = "1";
+          brightness = "0.9";
+          xray = false;
+        };
       };
-
-      master = { new_status = true; };
 
       misc = {
         vfr = true;
@@ -148,7 +152,7 @@
         preserve_split = true;
       };
 
-      opengl = { nvidia_anti_flicker = false; };
+      opengl = {nvidia_anti_flicker = false;};
 
       input = {
         kb_layout = config.var.keyboardLayout;
@@ -160,7 +164,7 @@
         numlock_by_default = true;
       };
 
-      windowrule = [ "animation popin,^(wlogout)$" ];
+      windowrule = ["animation popin,^(wlogout)$"];
 
       windowrulev2 = [
         "float, class:peaclock"
@@ -179,18 +183,18 @@
       animations = let
         animationSpeed = config.var.theme.animation-speed;
 
-        animationDuration = if animationSpeed == "slow" then
-          "4"
-        else if animationSpeed == "medium" then
-          "2.5"
-        else
-          "1.5";
-        borderDuration = if animationSpeed == "slow" then
-          "10"
-        else if animationSpeed == "medium" then
-          "6"
-        else
-          "3";
+        animationDuration =
+          if animationSpeed == "slow"
+          then "4"
+          else if animationSpeed == "medium"
+          then "2.5"
+          else "1.5";
+        borderDuration =
+          if animationSpeed == "slow"
+          then "10"
+          else if animationSpeed == "medium"
+          then "6"
+          else "3";
       in {
         enabled = true;
         bezier = [
@@ -226,5 +230,4 @@
       };
     };
   };
-};
 }

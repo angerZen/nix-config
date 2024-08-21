@@ -11,6 +11,7 @@
     ../../home/programs/fetch
     ../../home/programs/lf
     ../../home/programs/git
+    ../../home/programs/vscode
 
     # Scripts
     ../../home/scripts # All scripts
