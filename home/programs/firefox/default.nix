@@ -2,11 +2,11 @@
   pkgs,
   config,
   inputs,
-       ...
+  ...
 }: {
   programs.firefox = {
     enable = true;
-    package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
+    package = pkgs.firefox-unwrapped {
       extraPolicies = {
         CaptivePortal = false;
         DisableFirefoxStudies = true;

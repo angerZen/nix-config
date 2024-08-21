@@ -41,7 +41,6 @@
         "startup"
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.hyprpaper}/bin/hyprpaper"
-        "${pkgs.bitwarden}/bin/bitwarden"
       ];
 
       monitor = [",3440x1440@120,0x0,1"];
@@ -75,27 +74,28 @@
           "$mod, F5, exec, ${pkgs.kitty}/bin/kitty --class floating -c sound-output" # Choose sound output
         ]
         ++ (builtins.concatLists (builtins.genList (i: let
-          ws = i + 1;
-        in [
-          "$mod, code:1${toString i}, workspace, ${toString ws}"
-          "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
-        ]) 9));
+            ws = i + 1;
+          in [
+            "$mod, code:1${toString i}, workspace, ${toString ws}"
+            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+          ])
+          9));
 
       env = [
         "XDG_SESSION_TYPE,wayland"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "MOZ_ENABLE_WAYLAND,1"
-        "ANKI_WAYLAND,1"
+        # "ANKI_WAYLAND,1"
         "DISABLE_QT5_COMPAT,0"
         "NIXOS_OZONE_WL,1"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
-        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        # "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_QPA_PLATFORM=wayland,xcb"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        "GTK_THEME,FlatColor:dark"
-        "GTK2_RC_FILES,/home/hadi/.local/share/themes/FlatColor/gtk-2.0/gtkrc"
+        # "GTK_THEME,FlatColor:dark"
+        # "GTK2_RC_FILES,/home/hadi/.local/share/themes/FlatColor/gtk-2.0/gtkrc"
       ];
 
       cursor = {no_hardware_cursors = true;};
