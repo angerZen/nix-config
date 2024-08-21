@@ -77,7 +77,7 @@
         "distribution.searchplugins.defaultLocale" = "en-US";
         "general.useragent.locale" = "en-US";
       };
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions = with inputs.nur.repos.rycee.firefox-addons; [
         ublock-origin
         tabliss
         pywalfox
