@@ -2,7 +2,7 @@
   imports = [
     ../modules/fonts.nix
     ../modules/nvidia.nix
-    ../modules/tuigreet.nix
+    ../modules/greetd.nix
     ../modules/auto-upgrade.nix
     ../modules/timezone.nix
     ../modules/usb.nix
