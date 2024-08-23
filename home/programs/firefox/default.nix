@@ -53,7 +53,6 @@
       extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
         ublock-origin
         tabliss
-        pywalfox
         proton-pass
       ];
     };
