@@ -5,7 +5,7 @@ let
 in {
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers =
-    [ "nvidia" "displayLink" ]; # or "nvidiaLegacy470 etc.
+    [ "nvidia" ]; # or "nvidiaLegacy470 etc.
   boot.kernelParams =
     lib.optionals (lib.elem "nvidia" config.services.xserver.videoDrivers) [
       "nvidia-drm.modeset=1"
@@ -32,22 +32,10 @@ in {
     nvidia = {
       open = false;
       nvidiaSettings = true;
-      powerManagement.enable =
-        true; # This can cause sleep/suspend to fail and saves entire VRAM to /tmp/
+      powerManagement.enable = true; # This can cause sleep/suspend to fail and saves entire VRAM to /tmp/
+      forceFullCompositionPipeline = true;
       modesetting.enable = true;
       package = nvidiaDriverChannel;
-    };
-    graphics = {
-      enable = true;
-      package = nvidiaDriverChannel;
-      enable32Bit = true;
-      extraPackages = with pkgs; [
-        nvidia-vaapi-driver
-        vaapiVdpau
-        libvdpau-va-gl
-        mesa
-        egl-wayland
-      ];
     };
   };
 }
