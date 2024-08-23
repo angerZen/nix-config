@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   services.greetd = {
     enable = true;
     settings = {
       default_session = {
         command =
-          "Hyprland";
-        user = "angerZen";
+          "${pkgs.hyprland}/bin/Hyprland";
+        user = "${config.var.username}";
       };
     };
   };
