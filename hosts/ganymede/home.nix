@@ -12,6 +12,7 @@
     ../../home/programs/lf
     ../../home/programs/git
     ../../home/programs/vscode
+    ../../home/programs/discord
 
     # Scripts
     ../../home/scripts # All scripts
@@ -32,7 +33,6 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      discord
       xfce.thunar
       proton-pass
       vlc

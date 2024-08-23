@@ -26,7 +26,6 @@
     wayland-utils
     wayland-protocols
     meson
-    xwaylandvideobridge
     mate.mate-polkit
   ];
 
@@ -130,14 +129,13 @@
         "col.active_border" = "rgba(${config.var.theme.colors.accent}ff)";
         "col.inactive_border" = "rgba(00000055)";
         border_part_of_window = true;
-        layout = "master";
+        layout = "dwindle";
       };
 
       decoration = {
         rounding = 2;
         active_opacity = 0.95;
         inactive_opacity = 0.5;
-        # multisample_edges = true;
         drop_shadow = true;
         shadow_ignore_window = true;
         shadow_offset = "0 8";
@@ -187,19 +185,20 @@
 
       windowrule = [
         "animation popin,^(wlogout)$"
+
         "size 700 450, pavucontrol"
         "move 1200 72, pavucontrol"
+        "float,title:^(Volume Control)$"
+        "float,imv"
+        "move 510 290,imv"
+        "size 900 500,imv"
         ];
 
       windowrulev2 = [
-        "float, class:peaclock"
-        "move 2% 78%, class:peaclock"
-        "size 30% 20%, class:peaclock"
-
-        "float, class:floating"
-        "size 40% 40%, class:floating"
-        "move 30% 30%, class:floating"
-
+        "float, title:^(Picture-in-Picture)$"
+        "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
+        "pin, title:^(Picture-in-Picture)$"
+        "idleinhibit fullscreen, class:^(firefox)$"
         "float, title:Bluetooth Devices"
         "move 20% 20%, title:Bluetooth Devices"
         "size 60% 60%, title:Bluetooth Devices"
