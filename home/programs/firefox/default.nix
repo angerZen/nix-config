@@ -1,9 +1,12 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }: {
+  imports =
+    [(import ./userChrome.nix)]
+    ++ [(import ./userContent.nix)];
+
   programs.firefox = {
     enable = true;
     package = pkgs.wrapFirefox pkgs.firefox-unwrapped {
@@ -36,6 +39,33 @@
       search = {
         force = true;
         default = "DuckDuckGo";
+        engines = {
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+
+            icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@np"];
+          };
+          "Wikipedia".metaData.alias = "@wiki";
+          "Google".metaData.alias = "@g";
+          "Amazon.com".metaData.hidden = true;
+          "Bing".metaData.hidden = true;
+          "eBay".metaData.hidden = true;
+        };
       };
       settings = {
         "general.smoothScroll" = true;

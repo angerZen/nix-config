@@ -38,6 +38,9 @@
       vlc
 
       # Dev
+      nixd
+      alejandra
+      nixfmt-rfc-style
 
       # Utils
       zip

@@ -60,7 +60,7 @@
           "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
           "$mod, X, exec, powermenu" # Powermenu
           "$mod, R, exec, menu" # Launcher
-
+          "$mod, S, togglesplit,"
           "$mod, Q, killactive," # Close window
           "$mod, Space, togglefloating," # Toggle Floating
           "$mod, F, fullscreen" # Toggle Fullscreen
@@ -100,24 +100,6 @@
           "$mod, mouse:272, movewindow"
           "$mod, mouse:273, resizewindow"
         ];
-
-
-      env = [
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "MOZ_ENABLE_WAYLAND,1"
-        # "ANKI_WAYLAND,1"
-        "DISABLE_QT5_COMPAT,0"
-        "NIXOS_OZONE_WL,1"
-        "XDG_SESSION_TYPE,wayland"
-        "XDG_SESSION_DESKTOP,Hyprland"
-        # "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-        "QT_QPA_PLATFORM=wayland,xcb"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-        "ELECTRON_OZONE_PLATFORM_HINT,auto"
-        # "GTK_THEME,FlatColor:dark"
-        # "GTK2_RC_FILES,/home/hadi/.local/share/themes/FlatColor/gtk-2.0/gtkrc"
-      ];
 
       cursor = {no_hardware_cursors = true;};
 

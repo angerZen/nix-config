@@ -29,7 +29,7 @@
       "workbench.startupEditor" = "none";
       "workbench.statusBar.visible" = false;
       "nix.enableLanguageServer" = true;
-      "nix.serverPath" = "nil";
+      "nix.serverPath" = "nixd";
       "[typescriptreact]" = {
         "editor.defaultFormatter" = "esbenp.prettier-vscode";
       };
