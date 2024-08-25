@@ -87,7 +87,4 @@
       ];
     };
   };
-  home.sessionVariables = {
-    MOZ_DISABLE_CONTENT_SANDBOX = 1;
-  };
 }
