@@ -52,5 +52,6 @@
     xdg-utils
     wget
     curl
+    ungoogled-chromium
   ];
 }
