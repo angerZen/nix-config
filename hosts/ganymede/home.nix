@@ -1,31 +1,34 @@
-{ pkgs, config, ... }: {
-
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./variables.nix
 
     # Programs
     ../../home/programs/btop
-    ../../home/programs/cava
+    # ../../home/programs/cava
     ../../home/programs/kitty
     ../../home/programs/firefox
-    ../../home/programs/fetch
-    ../../home/programs/lf
+    # ../../home/programs/fetch
+    # ../../home/programs/lf
     ../../home/programs/git
     ../../home/programs/vscode
     ../../home/programs/discord
 
     # Scripts
-    ../../home/scripts # All scripts
+    # ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    ../../home/system/dunst
+    # ../../home/system/dunst
     ../../home/system/gtk
     ../../home/system/zathura
-    ../../home/system/hyprland
-    ../../home/system/waybar
-    ../../home/system/wlogout
-    ../../home/system/wofi
-    ../../home/system/udiskie
+    # ../../home/system/hyprland
+    # ../../home/system/waybar
+    # ../../home/system/wlogout
+    # ../../home/system/wofi
+    # ../../home/system/udiskie
   ];
 
   home = {
@@ -33,7 +36,7 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      xfce.thunar
+      # xfce.thunar
       proton-pass
       vlc
 
@@ -45,18 +48,18 @@
       # Utils
       zip
       unzip
-      glow
+      # glow
       optipng
-      pfetch
+      # pfetch
       pandoc
-      pamixer
-      pavucontrol
+      # pamixer
+      # pavucontrol
 
       # Just cool
-      peaclock
-      cbonsai
-      pipes
-      cmatrix
+      # peaclock
+      # cbonsai
+      # pipes
+      # cmatrix
     ];
 
     # Import wallpapers into $HOME/wallpapers
