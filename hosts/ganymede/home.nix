@@ -22,7 +22,7 @@
 
     # System (Desktop environment like stuff)
     # ../../home/system/dunst
-    ../../home/system/gtk
+    # ../../home/system/gtk
     ../../home/system/zathura
     # ../../home/system/hyprland
     # ../../home/system/waybar
