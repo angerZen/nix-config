@@ -16,6 +16,7 @@
     ../../home/programs/git
     ../../home/programs/vscode
     ../../home/programs/discord
+    ../../home/programs/games
 
     # Scripts
     # ../../home/scripts # All scripts
@@ -56,7 +57,7 @@
       # pavucontrol
 
       # Just cool
-      # peaclock
+      # peaclockzxcv
       # cbonsai
       # pipes
       # cmatrix
