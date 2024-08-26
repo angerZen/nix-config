@@ -15,6 +15,7 @@
     ../modules/home-manager.nix
     ../modules/utils.nix
     ../modules/kde.nix
+    ../modules/steam.nix
 
     ./hardware-configuration.nix
     ./variables.nix
