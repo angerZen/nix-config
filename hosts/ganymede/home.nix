@@ -39,6 +39,7 @@
       # xfce.thunar
       proton-pass
       vlc
+      brave
 
       # Dev
       nixd
