@@ -8,27 +8,27 @@
 
     # Programs
     ../../home/programs/btop
-    # ../../home/programs/cava
+    ../../home/programs/cava
     ../../home/programs/kitty
-    # ../../home/programs/fetch
-    # ../../home/programs/lf
+    ../../home/programs/fetch
+    ../../home/programs/lf
     ../../home/programs/git
     ../../home/programs/vscode
     ../../home/programs/discord
     ../../home/programs/games
 
     # Scripts
-    # ../../home/scripts # All scripts
+    ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    # ../../home/system/dunst
-    # ../../home/system/gtk
+    ../../home/system/dunst
+    ../../home/system/gtk
     ../../home/system/zathura
-    # ../../home/system/hyprland
-    # ../../home/system/waybar
-    # ../../home/system/wlogout
-    # ../../home/system/wofi
-    # ../../home/system/udiskie
+    ../../home/system/hyprland
+    ../../home/system/waybar
+    ../../home/system/wlogout
+    ../../home/system/wofi
+    ../../home/system/udiskie
   ];
 
   home = {

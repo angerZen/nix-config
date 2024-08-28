@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   nixpkgs.config.allowUnfree = true;
   nix = {
     extraOptions = ''
@@ -22,5 +18,6 @@
       dates = "weekly";
       options = "--delete-older-than 7d";
     };
+    getty.autologinUser = "angerzen";
   };
 }

@@ -1,5 +1,8 @@
-{ config, pkgs, ... }: {
-
+{
+  config,
+  pkgs,
+  ...
+}: {
   qt = {
     enable = true;
     platformTheme.name = "gtk2";
@@ -9,7 +12,7 @@
   gtk = {
     enable = true;
 
-    theme = { name = "FlatColor"; };
+    theme = {name = "palenight";};
 
     iconTheme = {
       package = pkgs.moka-icon-theme;

@@ -37,6 +37,7 @@
   programs.dconf.enable = true;
   programs.direnv.enable = true;
   services.dbus.enable = true;
+  programs.appimage.binfmt = true;
 
   # Faster rebuilding
   documentation = {
