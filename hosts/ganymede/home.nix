@@ -10,6 +10,7 @@
     ../../home/programs/btop
     ../../home/programs/cava
     ../../home/programs/kitty
+    ../../home/programs/firefox
     ../../home/programs/fetch
     ../../home/programs/lf
     ../../home/programs/git
@@ -36,7 +37,7 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      # xfce.thunar
+      xfce.thunar
       proton-pass
       vlc
       brave
@@ -49,18 +50,18 @@
       # Utils
       zip
       unzip
-      # glow
+      glow
       optipng
-      # pfetch
+      pfetch
       pandoc
-      # pamixer
-      # pavucontrol
+      pamixer
+      pavucontrol
 
       # Just cool
-      # peaclockzxcv
-      # cbonsai
-      # pipes
-      # cmatrix
+      peaclock
+      cbonsai
+      pipes
+      cmatrix
     ];
 
     # Import wallpapers into $HOME/wallpapers

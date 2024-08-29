@@ -1,8 +1,5 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{ pkgs, config, ... }: {
+
   networking.hostName = config.var.hostname;
 
   services = {
@@ -22,16 +19,16 @@
 
   security = {
     sudo.wheelNeedsPassword = false;
-    # pam.services = {
-    #   tuigreet = {};
-    #   hyprlock = {};
-    # };
+    pam.services = {
+      tuigreet = {};
+      hyprlock = {};
+    };
   };
 
-  # services.displayManager.autoLogin = {
-  #  enable = true;
-  #  user = "angerzen";
-  # };
+  services.displayManager.autoLogin = {
+    enable = true;
+    user = "angerzen";
+  };
 
   services.libinput.enable = true;
   programs.dconf.enable = true;
@@ -48,6 +45,8 @@
   };
 
   environment.systemPackages = with pkgs; [
+    fd
+    bc
     gcc
     git-ignore
     xdg-utils
