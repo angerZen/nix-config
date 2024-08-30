@@ -1,5 +1,8 @@
-{ pkgs, config, ... }: {
-
+{
+  pkgs,
+  config,
+  ...
+}: {
   networking.hostName = config.var.hostname;
 
   services = {
@@ -20,7 +23,7 @@
   security = {
     sudo.wheelNeedsPassword = false;
     pam.services = {
-      tuigreet = {};
+      swaylock = {};
       hyprlock = {};
     };
   };

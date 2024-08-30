@@ -10,7 +10,6 @@
     ../../home/programs/btop
     ../../home/programs/cava
     ../../home/programs/kitty
-    ../../home/programs/firefox
     ../../home/programs/fetch
     ../../home/programs/lf
     ../../home/programs/git
@@ -22,7 +21,7 @@
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    ../../home/system/dunst
+    ../../home/system/mako
     ../../home/system/gtk
     ../../home/system/zathura
     ../../home/system/hyprland

@@ -2,7 +2,7 @@
   imports = [
     ../modules/fonts.nix
     ../modules/nvidia.nix
-    ../modules/greetd.nix
+    # ../modules/greetd.nix
     ../modules/auto-upgrade.nix
     ../modules/timezone.nix
     ../modules/usb.nix
@@ -14,7 +14,6 @@
     ../modules/network-manager.nix
     ../modules/home-manager.nix
     ../modules/utils.nix
-    # ../modules/kde.nix
     ../modules/steam.nix
 
     ./hardware-configuration.nix
