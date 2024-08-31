@@ -29,7 +29,7 @@
     ../../home/system/wlogout
     ../../home/system/wofi
     ../../home/system/udiskie
-    # ../../home/system/swaylock
+    ../../home/system/pywal
   ];
 
   home = {

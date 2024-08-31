@@ -11,7 +11,7 @@
 
       background = {
         monitor = "";
-        path = "~/Pictures/wallpapers/wallhaven-vq69dl.jpg";
+        path = "$(sed -n 4p .config/waypaper/config.ini | cut -d' ' -f 3)";
         color = "rgb(${config.var.theme.colors.bg})";
         blur_size = 4;
         blur_passes = 3;
@@ -30,9 +30,9 @@
           font_color = "rgb(${config.var.theme.colors.fg})";
           fade_on_empty = true;
           placeholder_text = "Password..."; # Text rendered in the input box when it's empty.
-          position = "0, 80";
+          position = "0, -100";
           halign = "center";
-          valign = "bottom";
+          valign = "center";
         }
       ];
 
@@ -44,7 +44,7 @@
           color = "rgb(${config.var.theme.colors.fg})";
           font_size = 64;
           font_family = config.var.theme.font;
-          position = "0, 16";
+          position = "0, 100";
           halign = "center";
           valign = "center";
         }
@@ -56,7 +56,7 @@
           color = "rgb(${config.var.theme.colors.fg})";
           font_size = config.var.theme.font-size;
           font_family = config.var.theme.font;
-          position = "0, 0";
+          position = "0, 50";
           halign = "center";
           valign = "center";
         }

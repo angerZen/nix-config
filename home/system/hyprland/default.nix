@@ -7,7 +7,6 @@
   imports = [
     ./hyprlock.nix
     ./hypridle.nix
-    # ./hyprpaper.nix
     ./hyprcursor.nix
   ];
 
