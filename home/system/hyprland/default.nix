@@ -5,7 +5,7 @@
   ...
 }: {
   imports = [
-    ./hyprlocktty.nix
+    ./hyprlock.nix
     ./hypridle.nix
     # ./hyprpaper.nix
     ./hyprcursor.nix
