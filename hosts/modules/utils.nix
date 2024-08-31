@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  pkgs,
   ...
 }: {
   networking.hostName = config.var.hostname;

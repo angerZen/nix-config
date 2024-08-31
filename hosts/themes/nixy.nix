@@ -3,7 +3,7 @@
 
   font = "SFProDisplay Nerd Font";
   font-mono = "FiraCode Nerd Font Mono";
-  font-size = 14;
+  font-size = 11;
 
   rounding = 15;
   gaps-in = 10;
@@ -16,7 +16,7 @@
     transparent = true;
     float = true;
     position = "top";
-    font-size = 15;
+    font-size = 12;
   };
 
   colors = {

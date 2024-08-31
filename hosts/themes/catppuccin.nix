@@ -3,11 +3,11 @@
 
   font = "SFProDisplay Nerd Font";
   font-mono = "FiraCode Nerd Font Mono";
-  font-size = 13;
+  font-size = 11;
 
-  rounding = 11;
+  rounding = 10;
   gaps-in = 4;
-  gaps-out = 8;
+  gaps-out = 2;
   border-size = 2;
   animation-speed = "medium"; # "fast" | "medium" | "slow"
   fetch = "none"; # "nerdfetch" | "neofetch" | "pfetch" | "none"
@@ -16,7 +16,7 @@
     transparent = true;
     float = true;
     position = "top";
-    font-size = 15;
+    font-size = 12;
   };
 
   colors = {

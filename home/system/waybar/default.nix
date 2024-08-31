@@ -31,7 +31,7 @@
           if config.var.theme.waybar.float
           then config.var.theme.gaps-out
           else 0;
-        height = 44;
+        height = 32;
         modules-left = ["custom/logo" "hyprland/window"];
         modules-center = ["hyprland/workspaces"];
         modules-right = [
