@@ -51,7 +51,7 @@
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once=waypaper --restore"
-        "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
+        "sleep 1 && swww init && sleep 1 && hyprlock && notify-send 'Hey $USER, Welcome back' &"
         "wl-paste --type text --watch cliphist store &"
         "wl-paste --type image --watch cliphist store &"
         "waybar &"

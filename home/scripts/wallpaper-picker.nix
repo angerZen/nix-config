@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   wallpaper-picker-dmenu = pkgs.writeShellScriptBin "wallpaper-picker-dmenu" ''
-    launcher="rofi -dmenu"
+    launcher="wofi -dmenu"
     wallpaper_daemon="swww img"
     wallpaper_folder=$HOME/Pictures/wallpapers
   '';

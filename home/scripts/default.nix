@@ -1,11 +1,9 @@
 {
   imports = [
-    ./sounds
-    ./screenshot
-    ./startup
+    ./sounds.nix
+    ./screenshot.nix
     ./nerdfont_fzf
-    ./compress
-    ./misc
+    ./misc.nix
     ./wallpaper-picker.nix
   ];
 }

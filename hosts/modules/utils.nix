@@ -28,9 +28,10 @@
     };
   };
 
-  services.displayManager.autoLogin = {
-    enable = true;
-    user = "angerzen";
+  services.displayManager = {
+    sessionPackages = [pkgs.hyprland];
+    autoLogin.enable = true;
+    autoLogin.user = "${config.var.username}";
   };
 
   services.libinput.enable = true;
