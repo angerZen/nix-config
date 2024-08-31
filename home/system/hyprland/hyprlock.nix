@@ -11,16 +11,10 @@
 
       background = {
         monitor = "";
-        path = "$HOME/Pictures/wallpapers/${config.var.theme.wallpaper}";
+        path = "~/Pictures/wallpapers/wallhaven-vq69dl.jpg";
         color = "rgb(${config.var.theme.colors.bg})";
-
         blur_size = 4;
         blur_passes = 3;
-        noise = 0.1;
-        contrast = 1.3;
-        brightness = 0.8;
-        vibrancy = 0.21;
-        vibrancy_darkness = 0.0;
       };
 
       input-field = [

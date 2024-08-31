@@ -55,6 +55,8 @@
       pandoc
       pamixer
       pavucontrol
+      swww
+      waypaper
 
       # Just cool
       peaclock

@@ -32,8 +32,6 @@
     wayland-protocols
     meson
     mate.mate-polkit
-    swww
-    waypaper
   ];
 
   wayland.windowManager.hyprland = {
@@ -48,7 +46,6 @@
       exec-once = [
         "startup"
         "${pkgs.hypridle}/bin/hypridle"
-        "${pkgs.hyprpaper}/bin/hyprpaper"
         "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
         "exec-once=waypaper --restore"
         "sleep 1 && swww init && sleep 1 && hyprlock && notify-send 'Hey $USER, Welcome back' &"
@@ -57,7 +54,7 @@
         "waybar &"
         "mako -c /home/angerzen/.cache/wal/mako.conf"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
-        "sleep 5 && vendesktop --start-minimized &"
+        "sleep 5 && vesktop --start-minimized &"
         "exec systemctl --user import-environment PATH"
         "systemctl --user restart xdg-desktop-portal.service"
       ];
@@ -74,7 +71,7 @@
         "$mod, R, exec, menu" # Launcher
         "$mod, S, togglesplit,"
         "$mod, Q, killactive," # Close window
-        "$mod, W, wallpaper-picker"
+        "$mod, W, exec, pkill wofi || wallpaper-picker"
         "$mod, Space, togglefloating," # Toggle Floating
         "$mod, F, fullscreen" # Toggle Fullscreen
         "$mod, left, movefocus, l" # Move focus left
