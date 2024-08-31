@@ -11,7 +11,7 @@
 
       background = {
         monitor = "";
-        path = "$HOME/wallpapers/${config.var.theme.wallpaper}";
+        path = "$HOME/Pictures/wallpapers/${config.var.theme.wallpaper}";
         color = "rgb(${config.var.theme.colors.bg})";
 
         blur_size = 4;

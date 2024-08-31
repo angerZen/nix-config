@@ -36,7 +36,7 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      xfce.thunar
+      nautilus
       proton-pass
       vlc
       brave
@@ -64,9 +64,9 @@
     ];
 
     # Import wallpapers into $HOME/wallpapers
-    file."wallpapers" = {
+    file."Pictures/wallpapers" = {
       recursive = true;
-      source = ../../home/Pictures/wallpapers;
+      source = ../../home/wallpapers;
     };
 
     # Don't touch this
