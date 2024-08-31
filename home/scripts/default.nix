@@ -3,7 +3,7 @@
     ./sounds.nix
     ./screenshot.nix
     ./nerdfont_fzf
-    ./misc.nix
     ./wallpaper-picker.nix
+    ./misc.nix
   ];
 }
