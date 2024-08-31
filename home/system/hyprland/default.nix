@@ -4,7 +4,12 @@
   inputs,
   ...
 }: {
-  imports = [./hyprlocktty.nix ./hypridle.nix ./hyprpaper.nix ./hyprcursor.nix];
+  imports = [
+    ./hyprlocktty.nix
+    ./hypridle.nix
+    # ./hyprpaper.nix
+    ./hyprcursor.nix
+  ];
 
   home.packages = with pkgs; [
     hyprshot
@@ -27,6 +32,8 @@
     wayland-protocols
     meson
     mate.mate-polkit
+    swww
+    waypaper
   ];
 
   wayland.windowManager.hyprland = {
@@ -43,63 +50,69 @@
         "${pkgs.hypridle}/bin/hypridle"
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "exec-once=waypaper --restore"
+        "sleep 1 && swww init && sleep 1 && swaylock && notify-send 'Hey $USER, Welcome back' &"
+        "wl-paste --type text --watch cliphist store &"
+        "wl-paste --type image --watch cliphist store &"
+        "waybar &"
+        "mako -c /home/angerzen/.cache/wal/mako.conf"
         "${pkgs.mate.mate-polkit}/libexec/polkit-mate-authentication-agent-1 &"
-        "sleep 5 && discord --start-minimized &"
+        "sleep 5 && vendesktop --start-minimized &"
         "exec systemctl --user import-environment PATH"
         "systemctl --user restart xdg-desktop-portal.service"
       ];
 
       monitor = [",3440x1440@120,0x0,1"];
 
-      bind =
-        [
-          "$mod, T, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-          "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-          "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
-          "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
-          "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
-          "$mod, X, exec, powermenu" # Powermenu
-          "$mod, R, exec, menu" # Launcher
-          "$mod, S, togglesplit,"
-          "$mod, Q, killactive," # Close window
-          "$mod, Space, togglefloating," # Toggle Floating
-          "$mod, F, fullscreen" # Toggle Fullscreen
-          "$mod, left, movefocus, l" # Move focus left
-          "$mod, right, movefocus, r" # Move focus Right
-          "$mod, up, movefocus, u" # Move focus Up
-          "$mod, down, movefocus, d" # Move focus Down
-          "$mod, mouse_down, workspace, e-1"
-          "$mod, mouse_up, workspace, e+1"
-          # switch workspaces bindings
-          "$mod, 1, workspace, 1"
-          "$mod, 2, workspace, 2"
-          "$mod, 3, workspace, 3"
-          "$mod, 4, workspace, 4"
-          "$mod, 5, workspace, 5"
-          "$mod, 6, workspace, 6"
-          "$mod, 7, workspace, 7"
-          "$mod, 8, workspace, 8"
-          "$mod, 9, workspace, 9"
-          # move windows to workspace bindings
-          "$mod SHIFT, 1, movetoworkspace, 1"
-          "$mod SHIFT, 2, movetoworkspace, 2"
-          "$mod SHIFT, 3, movetoworkspace, 3"
-          "$mod SHIFT, 4, movetoworkspace, 4"
-          "$mod SHIFT, 5, movetoworkspace, 5"
-          "$mod SHIFT, 6, movetoworkspace, 6"
-          "$mod SHIFT, 7, movetoworkspace, 7"
-          "$mod SHIFT, 8, movetoworkspace, 8"
-          "$mod SHIFT, 9, movetoworkspace, 9"
+      bind = [
+        "$mod, T, exec, ${pkgs.kitty}/bin/kitty" # Kitty
+        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
+        "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
+        "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
+        "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
+        "$mod, X, exec, powermenu" # Powermenu
+        "$mod, R, exec, menu" # Launcher
+        "$mod, S, togglesplit,"
+        "$mod, Q, killactive," # Close window
+        "$mod, W, wallpaper-picker"
+        "$mod, Space, togglefloating," # Toggle Floating
+        "$mod, F, fullscreen" # Toggle Fullscreen
+        "$mod, left, movefocus, l" # Move focus left
+        "$mod, right, movefocus, r" # Move focus Right
+        "$mod, up, movefocus, u" # Move focus Up
+        "$mod, down, movefocus, d" # Move focus Down
+        "$mod, mouse_down, workspace, e-1"
+        "$mod, mouse_up, workspace, e+1"
+        # switch workspaces bindings
+        "$mod, 1, workspace, 1"
+        "$mod, 2, workspace, 2"
+        "$mod, 3, workspace, 3"
+        "$mod, 4, workspace, 4"
+        "$mod, 5, workspace, 5"
+        "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
+        "$mod, 9, workspace, 9"
+        # move windows to workspace bindings
+        "$mod SHIFT, 1, movetoworkspace, 1"
+        "$mod SHIFT, 2, movetoworkspace, 2"
+        "$mod SHIFT, 3, movetoworkspace, 3"
+        "$mod SHIFT, 4, movetoworkspace, 4"
+        "$mod SHIFT, 5, movetoworkspace, 5"
+        "$mod SHIFT, 6, movetoworkspace, 6"
+        "$mod SHIFT, 7, movetoworkspace, 7"
+        "$mod SHIFT, 8, movetoworkspace, 8"
+        "$mod SHIFT, 9, movetoworkspace, 9"
 
-          "$mod, PRINT, exec, screenshot window" # Screenshot window
-          ", PRINT, exec, screenshot monitor" # Screenshot monitor
-          "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
-          "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
-        ];
-        bindm = [
-          "$mod, mouse:272, movewindow"
-          "$mod, mouse:273, resizewindow"
-        ];
+        "$mod, PRINT, exec, screenshot window" # Screenshot window
+        ", PRINT, exec, screenshot monitor" # Screenshot monitor
+        "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
+        "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
+      ];
+      bindm = [
+        "$mod, mouse:272, movewindow"
+        "$mod, mouse:273, resizewindow"
+      ];
 
       cursor = {no_hardware_cursors = true;};
 
@@ -168,13 +181,13 @@
       windowrule = [
         "animation popin,^(wlogout)$"
 
-        "size 700 450, pavucontrol"
-        "move 1200 72, pavucontrol"
+        "size 700 800, pavucontrol"
+        "move 1370 72, pavucontrol"
         "float,title:^(Volume Control)$"
         "float,imv"
         "move 510 290,imv"
         "size 900 500,imv"
-        ];
+      ];
 
       windowrulev2 = [
         "float, title:^(Picture-in-Picture)$"

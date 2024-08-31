@@ -66,7 +66,7 @@
     # Import wallpapers into $HOME/wallpapers
     file."wallpapers" = {
       recursive = true;
-      source = ../../home/wallpapers;
+      source = ../../home/Pictures/wallpapers;
     };
 
     # Don't touch this

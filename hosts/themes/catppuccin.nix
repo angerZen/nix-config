@@ -1,6 +1,4 @@
 {
-  wallpaper = "wallhaven-zy7z8w.jpg";
-
   font = "SFProDisplay Nerd Font";
   font-mono = "FiraCode Nerd Font Mono";
   font-size = 11;

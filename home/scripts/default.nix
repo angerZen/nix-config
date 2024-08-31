@@ -6,5 +6,6 @@
     ./nerdfont_fzf
     ./compress
     ./misc
+    ./wallpaper-picker.nix
   ];
 }
