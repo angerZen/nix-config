@@ -1,7 +1,6 @@
-{config, ...}: {
-  home.packages = with pkgs; [
-    pywal
-  ];
+{...}: {
+  programs.pywal.enable = true;
+
   xdg.configFile."wal/templates/colors-hyprland.conf".text = ''
     $color2 = rgb({color2.strip})
     $color3 = rgb({color3.strip})

@@ -8,9 +8,8 @@
 
     # Programs
     ../../home/programs/btop
-    ../../home/programs/cava
     ../../home/programs/kitty
-    ../../home/programs/fetch
+    ../../home/programs/neofetch
     ../../home/programs/lf
     ../../home/programs/git
     ../../home/programs/vscode
@@ -37,7 +36,7 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      nautilus
+      xfce.thunar
       proton-pass
       vlc
       brave

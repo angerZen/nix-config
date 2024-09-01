@@ -5,5 +5,6 @@
     ./nerdfont_fzf
     ./wallpaper-picker.nix
     ./misc.nix
+    ./reload.nix
   ];
 }

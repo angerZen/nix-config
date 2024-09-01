@@ -12,7 +12,7 @@
       background = {
         monitor = "";
         path = "$(sed -n 4p .config/waypaper/config.ini | cut -d' ' -f 3)";
-        color = "rgb(${config.var.theme.colors.bg})";
+        color = "$(sed -n 1p .cache/wal/colors)";
         blur_size = 4;
         blur_passes = 3;
       };
@@ -25,9 +25,9 @@
           dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
           dots_spacing = 0.64; # Scale of dots' absolute size, 0.0 - 1.0
           dots_center = true;
-          outer_color = "rgb(${config.var.theme.colors.accent})";
-          inner_color = "rgb(${config.var.theme.colors.bg})";
-          font_color = "rgb(${config.var.theme.colors.fg})";
+          outer_color = "$(sed -n 7p .cache/wal/colors)";
+          inner_color = "$(sed -n 1p .cache/wal/colors)";
+          font_color = "$(sed -n 8p .cache/wal/colors)";
           fade_on_empty = true;
           placeholder_text = "Password..."; # Text rendered in the input box when it's empty.
           position = "0, -100";
@@ -41,9 +41,9 @@
         {
           monitor = "";
           text = ''cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>"'';
-          color = "rgb(${config.var.theme.colors.fg})";
+          color = "$(sed -n 8p .cache/wal/colors)";
           font_size = 64;
-          font_family = config.var.theme.font;
+          font_family = "SFProDisplay Nerd Font";
           position = "0, 100";
           halign = "center";
           valign = "center";
@@ -53,9 +53,9 @@
           monitor = "";
           text = ''
             Hey <span text_transform="capitalize" size="larger">$USER</span>'';
-          color = "rgb(${config.var.theme.colors.fg})";
-          font_size = config.var.theme.font-size;
-          font_family = config.var.theme.font;
+          color = "$(sed -n 8p .cache/wal/colors)";
+          font_size = 22;
+          font_family = "SFProDisplay Nerd Font";
           position = "0, 50";
           halign = "center";
           valign = "center";
@@ -64,9 +64,9 @@
         {
           monitor = "";
           text = "Type to unlock!";
-          color = "rgb(${config.var.theme.colors.fg})";
-          font_size = config.var.theme.font-size;
-          font_family = config.var.theme.font;
+          color = "$(sed -n 8p .cache/wal/colors)";
+          font_size = 18;
+          font_family = "SFProDisplay Nerd Font";
           position = "0, 30";
           halign = "center";
           valign = "bottom";

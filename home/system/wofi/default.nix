@@ -1,5 +1,4 @@
-{ config, ... }: {
-
+{config, ...}: {
   programs.wofi = {
     enable = true;
 
@@ -32,65 +31,66 @@
     };
 
     style = ''
-      /** ********** Fonts ********** **/
+      @import '../../.cache/wal/colors-waybar.css
+        /** ********** Fonts ********** **/
 
-      * {
-        font-family: "${config.var.theme.font}";
-        font-weight: 500;
-        font-size: ${toString config.var.theme.font-size}px;
-      }
+        * {
+          font-family: "SFProDisplay Nerd Font";
+          font-weight: 500;
+          font-size: 14px;
+        }
 
-      #window {
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
-        border-radius: ${toString config.var.theme.rounding}px;
-      }
+        #window {
+          background-color: @color9;
+          color: @color2;
+          border-radius: 10px;
+        }
 
-      #outer-box {
-        padding: 20px;
-      }
+        #outer-box {
+          padding: 20px;
+        }
 
-      #input {
-        background-color: #${config.var.theme.colors.bg};
-        border: 0px solid #${config.var.theme.colors.accent};
-        padding: 8px 12px;
-      }
+        #input {
+          background-color: @background;
+          border: 0px solid @color3;
+          padding: 8px 12px;
+        }
 
-      #scroll {
-        margin-top: 20px;
-      }
+        #scroll {
+          margin-top: 20px;
+        }
 
-      #inner-box {}
+        #inner-box {}
 
-      #img {
-        padding-right: 8px;
-      }
+        #img {
+          padding-right: 8px;
+        }
 
-      #text {
-        color: #${config.var.theme.colors.c7};
-      }
+        #text {
+          color: @color8;
+        }
 
-      #text:selected {
-        color: #${config.var.theme.colors.fg};
-      }
+        #text:selected {
+          color: @background;
+        }
 
-      #entry {
-        padding: 6px;
-      }
+        #entry {
+          padding: 6px;
+        }
 
-      #entry:selected {
-        background-color: #${config.var.theme.colors.accent};
-        color: #${config.var.theme.colors.accentFg};
-      }
+        #entry:selected {
+          background-color: @color9;
+          color: @color2;
+        }
 
-      #unselected {}
+        #unselected {}
 
-      #selected {}
+        #selected {}
 
-      #input,
-      #entry:selected {
-        border-radius: ${toString config.var.theme.rounding}px;
-      }
+        #input,
+        #entry:selected {
+          border-radius: 10px;
+        }
     '';
   };
 }

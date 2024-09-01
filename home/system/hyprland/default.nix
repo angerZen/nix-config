@@ -42,6 +42,10 @@
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";
 
+      source = [
+        "/home/angerzen/.cache/wal/colors-hyprland.conf"
+      ];
+
       exec-once = [
         "startup"
         "${pkgs.hypridle}/bin/hypridle"
@@ -114,10 +118,10 @@
 
       general = {
         resize_on_border = true;
-        gaps_in = config.var.theme.gaps-in;
-        gaps_out = config.var.theme.gaps-out;
-        border_size = config.var.theme.border-size;
-        "col.active_border" = "rgba(${config.var.theme.colors.accent}ff)";
+        gaps_in = 4;
+        gaps_out = 2;
+        border_size = 2;
+        "col.active_border" = "rgba(255, 255, 255, 0.8)";
         "col.inactive_border" = "rgba(00000055)";
         border_part_of_window = true;
         layout = "dwindle";
@@ -165,7 +169,7 @@
       opengl = {nvidia_anti_flicker = false;};
 
       input = {
-        kb_layout = config.var.keyboardLayout;
+        kb_layout = "us";
         kb_options = "caps:escape";
         follow_mouse = 1;
         sensitivity = 0.5;
@@ -196,7 +200,7 @@
       ];
 
       animations = let
-        animationSpeed = config.var.theme.animation-speed;
+        animationSpeed = "fast";
 
         animationDuration =
           if animationSpeed == "slow"
@@ -244,5 +248,6 @@
         ];
       };
     };
+    extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
   };
 }

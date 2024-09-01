@@ -8,30 +8,14 @@
     enable = true;
     settings = {
       mainBar = {
-        layer = config.var.theme.waybar.position;
-        position = config.var.theme.waybar.position;
+        layer = "top";
+        position = "top";
         spacing = 0;
-        "margin-top" =
-          if
-            config.var.theme.waybar.float
-            && config.var.theme.waybar.position == "top"
-          then config.var.theme.gaps-out
-          else 0;
-        "margin-bottom" =
-          if
-            config.var.theme.waybar.float
-            && config.var.theme.waybar.position == "bottom"
-          then config.var.theme.gaps-out
-          else 0;
-        "margin-left" =
-          if config.var.theme.waybar.float
-          then config.var.theme.gaps-out
-          else 0;
-        "margin-right" =
-          if config.var.theme.waybar.float
-          then config.var.theme.gaps-out
-          else 0;
-        height = 32;
+        "margin-top" = 2;
+        "margin-bottom" = 2;
+        "margin-left" = 2;
+        "margin-right" = 2;
+        height = 28;
         modules-left = ["custom/logo" "hyprland/window"];
         modules-center = ["hyprland/workspaces"];
         modules-right = [
@@ -94,7 +78,7 @@
         clock = {
           "tooltip-format" = "<tt>{calendar}</tt>";
           "format-alt" = "  {:%a, %d %b %Y}";
-          format = "󰥔  {:%I:%M %p}";
+          format = "󰥔  {:%OI:%M %p}";
         };
 
         pulseaudio = {
@@ -162,38 +146,27 @@
       };
     };
     style = ''
+      @import '../../.cache/wal/colors-waybar.css';
       * {
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: "${config.var.theme.font}";
-        color: #${config.var.theme.colors.fg};
+        font-family: SFProDisplay Nerd Font;
+        color: @foreground;
         font-weight: 700;
       }
 
       window#waybar {
-        background-color: ${
-        if config.var.theme.waybar.transparent
-        then "rgba(0, 0, 0, 0)"
-        else "#${config.var.theme.colors.bg}"
-      };
+        background-color: transparent;
         transition-property: background-color;
         transition-duration: 0.5s;
-        border-radius: ${
-        if config.var.theme.waybar.float
-        then toString config.var.theme.rounding
-        else "0"
-      }px;
-        font-size: ${toString config.var.theme.waybar.font-size}px;
+        border-radius: 10px;
+        font-size: 16px;
       }
 
       .modules-left, .modules-center, .modules-right {
-        border-radius: ${
-        if config.var.theme.waybar.float
-        then toString config.var.theme.rounding
-        else "0"
-      }px;
-        background-color: #${config.var.theme.colors.bg};
+        border-radius: 10px;
+        background-color: @background;
         padding: 2px 6px;
       }
 
@@ -212,13 +185,13 @@
         padding: 6px 18px;
         margin: 6px 3px;
         border-radius: 4px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: @color2;
+        color: @foreground;
       }
 
       #workspaces button.active {
-        color: #${config.var.theme.colors.accentFg};
-        background-color: #${config.var.theme.colors.accent};
+        color: @foreground;
+        background-color: @color7;
       }
 
       #workspaces button:hover {
@@ -228,11 +201,11 @@
       }
 
       #workspaces button.urgent {
-        background-color: #${config.var.theme.colors.c1};
+        background-color: @background;
       }
 
       #window > * {
-        font-family: "${config.var.theme.font-mono}";
+        font-family: SFProDisplay Nerd Font Mono;
       }
 
       #memory,
@@ -249,19 +222,18 @@
         border-radius: 9px;
         margin: 6px 3px;
         padding: 6px 12px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: @background;
+        color: @color6;
       }
 
       #tray menu {
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: @background;
+        color: @color6;
       }
 
       #custom-logo {
         padding-right: 7px;
-        font-size: ${toString config.var.theme.waybar.font-size}px;
-        color: #${config.var.theme.colors.accent};
+        color: @color7;
       }
 
       @keyframes blink {
@@ -284,27 +256,27 @@
       }
 
       #battery.charging {
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: @background;
+        color: @color6;
         animation: none;
       }
 
       #custom-power {
-        background-color: #${config.var.theme.colors.accent};
-        color: #${config.var.theme.colors.accentFg};
+        background-color: @background;
+        color: @foreground;
       }
 
       tooltip {
         border-radius: 8px;
         padding: 15px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: @background;
+        color: @color6;
       }
 
       tooltip label {
         padding: 5px;
-        background-color: #${config.var.theme.colors.bgalt};
-        color: #${config.var.theme.colors.fgalt};
+        background-color: @background;
+        color: @color6;
       }
     '';
   };

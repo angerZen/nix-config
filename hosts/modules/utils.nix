@@ -57,5 +57,6 @@
     wget
     curl
     gparted
+    geany
   ];
 }

@@ -27,7 +27,5 @@
     # allow id {id} # device 1...
     usbguard = false;
     usbguardRules = "";
-
-    theme = import ../themes/catppuccin.nix; # select your theme here
   };
 }
