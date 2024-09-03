@@ -23,7 +23,6 @@
   security = {
     sudo.wheelNeedsPassword = false;
     pam.services = {
-      swaylock = {};
       hyprlock = {};
     };
   };
