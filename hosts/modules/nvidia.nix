@@ -10,8 +10,8 @@ in {
   services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
   boot.kernelParams = lib.optionals (lib.elem "nvidia" config.services.xserver.videoDrivers) [
     "nvidia-drm.modeset=1"
-    "nvidia_drm.fbdev=1"
   ];
+
   environment.variables = {
     LIBVA_DRIVER_NAME = "nvidia"; # hardware acceleration
     __GLX_VENDOR_LIBRARY_NAME = "nvidia";
