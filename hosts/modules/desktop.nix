@@ -1,4 +1,4 @@
-{...}:{
+{...}: {
   programs = {
     hyprland = {
       enable = true;
@@ -6,5 +6,5 @@
     };
     hypridle.enable = true;
     hyprlock.enable = true;
-  }
+  };
 }
