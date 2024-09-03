@@ -58,5 +58,6 @@
     curl
     gparted
     geany
+    gamescope
   ];
 }

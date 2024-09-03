@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }: {
@@ -10,34 +9,10 @@
     ./hyprcursor.nix
   ];
 
-  home.packages = with pkgs; [
-    hyprshot
-    hyprpicker
-    swappy
-    imv
-    wf-recorder
-    xdg-desktop-portal-hyprland
-    wlr-randr
-    wl-clipboard
-    brightnessctl
-    gnome-themes-extra
-    wlsunset
-    xwayland
-    xdg-desktop-portal-gtk
-    qt5ct
-    libva
-    dconf
-    wayland-utils
-    wayland-protocols
-    meson
-    mate.mate-polkit
-  ];
-
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
-    package = inputs.hyprland.packages."${pkgs.system}".hyprland;
-
+    systemd.enable = true;
     settings = {
       "$mod" = "SUPER";
       "$shiftMod" = "SUPER_SHIFT";

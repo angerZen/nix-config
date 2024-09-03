@@ -32,7 +32,7 @@
           "on-click" = "activate";
           "on-click-right" = "fullscreen";
 
-          "icon-size" = 25;
+          "icon-size" = 28;
           "tooltip-format" = "{title}";
         };
         "hyprland/window" = {
@@ -182,8 +182,8 @@
         all: initial; /* Remove GTK theme values (waybar #1351) */
         min-width: 0; /* Fix weird spacing in materia (waybar #450) */
         box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
-        padding: 6px 18px;
-        margin: 6px 3px;
+        padding: 4px 12px;
+        margin: 4px 2px;
         border-radius: 4px;
         background-color: @color2;
         color: @foreground;
@@ -220,8 +220,8 @@
       #tray,
       #backlight{
         border-radius: 9px;
-        margin: 6px 3px;
-        padding: 6px 12px;
+        margin: 4px 2px;
+        padding: 4px 12px;
         background-color: @background;
         color: @color6;
       }
@@ -232,7 +232,8 @@
       }
 
       #custom-logo {
-        padding-right: 7px;
+        padding-right: 8px;
+        padding-left: 8px;
         color: @color7;
       }
 

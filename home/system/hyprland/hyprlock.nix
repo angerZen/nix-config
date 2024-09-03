@@ -52,11 +52,11 @@
         {
           monitor = "";
           text = ''
-            Hey <span text_transform="capitalize" size="larger">$USER</span>'';
+            Hey <span size="larger">$USER</span>'';
           color = "$(sed -n 8p .cache/wal/colors)";
           font_size = 22;
           font_family = "SFProDisplay Nerd Font";
-          position = "0, 50";
+          position = "0, 10";
           halign = "center";
           valign = "center";
         }

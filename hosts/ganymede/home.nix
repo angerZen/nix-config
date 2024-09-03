@@ -57,12 +57,28 @@
       pavucontrol
       swww
       waypaper
-
-      # Just cool
-      peaclock
-      cbonsai
-      pipes
-      cmatrix
+      hyprshot
+      hyprpicker
+      swappy
+      imv
+      wf-recorder
+      xdg-desktop-portal-hyprland
+      wlr-randr
+      wl-clipboard
+      brightnessctl
+      gnome-themes-extra
+      wlsunset
+      xwayland
+      xdg-desktop-portal-gtk
+      qt5ct
+      libva
+      dconf
+      wayland-utils
+      wayland-protocols
+      meson
+      mate.mate-polkit
+      xwayland
+      xwaylandvideobridge
     ];
 
     # Import wallpapers into $HOME/wallpapers

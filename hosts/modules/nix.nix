@@ -23,4 +23,10 @@
       options = "--delete-older-than 7d";
     };
   };
+  xdg.portal.enable = true;
+  xdg.portal.config.common.default = "*";
+  xdg.portal.extraPortals = [
+    pkgs.xdg-desktop-portal-hyprland
+    pkgs.xdg-desktop-portal-gtk
+  ];
 }
