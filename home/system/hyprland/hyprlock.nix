@@ -20,15 +20,14 @@
       input-field = [
         {
           monitor = "";
-          size = "250, 50";
-          outline_thickness = 3;
+          size = "250, 40";
+          outline_thickness = 2;
           dots_size = 0.2; # Scale of input-field height, 0.2 - 0.8
           dots_spacing = 0.64; # Scale of dots' absolute size, 0.0 - 1.0
           dots_center = true;
           outer_color = "$(sed -n 7p .cache/wal/colors)";
           inner_color = "$(sed -n 1p .cache/wal/colors)";
           font_color = "$(sed -n 8p .cache/wal/colors)";
-          fade_on_empty = true;
           placeholder_text = "Password..."; # Text rendered in the input box when it's empty.
           position = "0, -100";
           halign = "center";
