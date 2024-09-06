@@ -25,6 +25,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-citizen.url = "github:LovingMelody/nix-citizen";
+
+    # Optional - updates underlying without waiting for nix-citizen to update
+    nix-gaming.url = "github:fufexan/nix-gaming";
+    nix-citizen.inputs.nix-gaming.follows = "nix-gaming";
+
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
   };
 
