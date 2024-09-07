@@ -1,7 +1,6 @@
 {
   pkgs,
   config,
-  inputs,
   ...
 }: {
   imports = [
@@ -80,7 +79,6 @@
       mate.mate-polkit
       xwayland
       xwaylandvideobridge
-      inputs.nix-citizen.packages.${system}.star-citizen
     ];
 
     # Import wallpapers into $HOME/wallpapers
