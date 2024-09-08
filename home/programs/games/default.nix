@@ -10,6 +10,5 @@
     protontricks
     wine
     obs-studio
-    inputs.nix-citizen.packages.${system}.star-citizen
   ];
 }

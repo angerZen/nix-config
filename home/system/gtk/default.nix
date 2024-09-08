@@ -1,21 +1,16 @@
 {pkgs, ...}: {
-  imports = [./theme.nix];
+  # imports = [./theme.nix];
   gtk = {
     enable = true;
 
-    theme = {
-      name = "Catppuccin-Mocha-Sapphire";
-      package =
-        pkgs.catppuccin-gtk.override
-        {
-          accents = ["sapphire"];
-          variant = "mocha";
-        };
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.adwaita-icon-theme;
     };
 
-    iconTheme = {
-      name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
     };
 
     font = {
@@ -23,16 +18,10 @@
       size = 12;
     };
   };
-
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.catppuccin-cursors.mochaDark;
     name = "Catppuccin-Mocha-Dark";
     size = 14;
-  };
-
-  home.sessionVariables = {
-    GTK_USE_PORTAL = 1;
-    GTK_THEME = "Catppuccin-Mocha-Sapphire";
   };
 }

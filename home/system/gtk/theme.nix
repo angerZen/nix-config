@@ -17,7 +17,7 @@
     /* text foreground color of insensitive widgets */
     @define-color insensitive_fg_color rgba(245, 224, 220, 0.5);
     /* insensitive text widgets and the like base background color */
-    @define-color insensitive_base_color #181825;
+    @define-color insensitive_base_color @background;
     /* widget text/foreground color on backdrop windows */
     @define-color theme_unfocused_fg_color @foreground;
     /* text color for entries, views and content in general on backdrop windows */
