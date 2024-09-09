@@ -51,6 +51,7 @@
     fd
     bc
     gcc
+    git
     git-ignore
     xdg-utils
     wget

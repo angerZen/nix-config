@@ -46,6 +46,7 @@
       nixd
       alejandra
       nixfmt-rfc-style
+      sublime4
 
       # Utils
       zip

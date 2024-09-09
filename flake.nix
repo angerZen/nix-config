@@ -41,8 +41,6 @@
   } @ inputs: let
     inherit (self) outputs;
   in {
-    nixosModules = import ./modules/nixos;
-    homeManagerModules = import ./modules/home-manager;
     formatter = pkgs: pkgs.alejandra;
 
     nixosConfigurations = {
