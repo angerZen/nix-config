@@ -1,8 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     lutris
     winetricks
@@ -10,5 +6,6 @@
     protontricks
     wine
     obs-studio
+    gamescope
   ];
 }

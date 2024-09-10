@@ -37,7 +37,7 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      xfce.thunar
+      nautilus
       proton-pass
       vlc
       brave

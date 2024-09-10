@@ -37,9 +37,8 @@
 
       bind = [
         "$mod, T, exec, ${pkgs.kitty}/bin/kitty" # Kitty
-        "$mod, E, exec, ${pkgs.xfce.thunar}/bin/thunar" # Thunar
-        "$mod, B, exec, ${pkgs.firefox}/bin/firefox" # Firefox
-        "$mod, C, exec, ${pkgs.kitty}/bin/kitty --class peaclock peaclock" # Peaclock
+        "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus" #Nautilus
+        "$mod, B, exec, ${pkgs.brave}/bin/brave" # Brave
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, R, exec, menu" # Launcher
