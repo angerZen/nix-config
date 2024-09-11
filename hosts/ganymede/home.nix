@@ -57,8 +57,6 @@
       pandoc
       pamixer
       pavucontrol
-      swww
-      waypaper
       hyprshot
       hyprpicker
       swappy

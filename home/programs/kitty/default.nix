@@ -1,11 +1,8 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   programs.kitty = {
     enable = true;
     settings = {
+      include = "~/.cache/wal/colors-kitty.conf";
       scrollback_lines = 10000;
       initial_window_width = 1200;
       initial_window_height = 600;

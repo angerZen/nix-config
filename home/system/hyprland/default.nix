@@ -44,7 +44,7 @@
         "$mod, R, exec, menu" # Launcher
         "$mod, S, togglesplit,"
         "$mod, Q, killactive," # Close window
-        "$mod, W, exec, pkill wofi || wallpaper-picker"
+        "$mod, W, exec, waypaper"
         "$mod, Space, togglefloating," # Toggle Floating
         "$mod, F, fullscreen" # Toggle Fullscreen
         "$mod, left, movefocus, l" # Move focus left
