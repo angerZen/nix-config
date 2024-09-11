@@ -9,7 +9,7 @@
     wallpaper_daemon=$wallpaper_daemon
     wallpaper_location=$(sed -n 4p .config/waypaper/config.ini | cut -d' ' -f 3)
     $wallpaper_daemon $wallpaper_location
-    wal -i $wallpaper_location && reload &
+    wal --cols16 "darken" -i $wallpaper_location && reload &
   '';
 in {
   home.packages = with pkgs; [
