@@ -30,6 +30,7 @@
     ../../home/system/wofi
     ../../home/system/udiskie
     ../../home/system/pywal
+    ../../home/system/waypaper
   ];
 
   home = {
