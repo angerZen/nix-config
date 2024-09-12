@@ -1,4 +1,4 @@
-{config, ...}: {
+{pkgs, ...}: {
   services = {
     blueman-applet.enable = true;
     network-manager-applet.enable = true;
@@ -23,6 +23,7 @@
           "backlight"
           "pulseaudio"
           "pulseaudio#microphone"
+          "custom/wallpaper"
           "clock"
           "custom/power"
         ];
@@ -101,7 +102,12 @@
           tooltip = false;
           on-click = "menu";
         };
-
+        "custom/wallpaper" = {
+          format = "  ";
+          on-click = "${pkgs.waypaper}/bin/waypaper";
+          tooltip = true;
+          tooltip-format = "Change wallpaper";
+        };
         battery = {
           format = "{capacity}% {icon}";
           "format-icons" = {

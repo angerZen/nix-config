@@ -1,6 +1,6 @@
 {...}: let
   theme = ''
-      /* widget text/foreground color */
+    /* widget text/foreground color */
     @define-color theme_fg_color @foreground;
     /* text color for entries, views and content in general */
     @define-color theme_text_color @foreground;
