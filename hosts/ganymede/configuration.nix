@@ -16,7 +16,6 @@
     ../modules/home-manager.nix
     ../modules/utils.nix
     ../modules/steam.nix
-    ../modules/cosmic.nix
 
     ./hardware-configuration.nix
     ./variables.nix
