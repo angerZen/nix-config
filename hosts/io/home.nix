@@ -14,7 +14,7 @@
     ../../home/programs/git
     ../../home/programs/vscode
     ../../home/programs/discord
-    ../../home/programs/games
+    # ../../home/programs/games
     ../../home/programs/neovim
 
     # Scripts
