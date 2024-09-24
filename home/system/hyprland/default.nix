@@ -42,7 +42,7 @@
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, R, exec, menu" # Launcher
-        "$mod, S, togglesplit,"
+        "$mod, S, layoutmsg, swapwithmaster master"
         "$mod, Q, killactive," # Close window
         # "$mod, W, exec, waypaper"
         "$mod, Space, togglefloating," # Toggle Floating
@@ -94,7 +94,7 @@
         "col.active_border" = "rgba(255, 255, 255, 0.8)";
         "col.inactive_border" = "rgba(00000055)";
         border_part_of_window = true;
-        layout = "dwindle";
+        layout = "master";
       };
 
       decoration = {
@@ -131,11 +131,22 @@
         animate_manual_resizes = true;
       };
 
+      dwindle = {
+        no_gaps_when_only = true;
+        force_split = 0;
+        special_scale_factor = 1.0;
+        split_width_multiplier = 1.0;
+        use_active_for_splits = true;
+        pseudotile = "yes";
+        preserve_split = "yes";
+      };
+
       master = {
-        new_is_master = false;
+        # new_status = "master";
+        special_scale_factor = 0.8;
+        no_gaps_when_only = false;
         allow_small_split = true;
-        special_scale_factor = "0.80";
-        mfact = "0.46";
+        mfact = 0.45;
         orientation = "center";
         inherit_fullscreen = false;
         always_center_master = false;
