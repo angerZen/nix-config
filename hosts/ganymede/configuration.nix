@@ -4,7 +4,7 @@
     ../modules/nvidia.nix
     # ../modules/greetd.nix
     ../modules/hyprland.nix
-    ../modules/cosmic.nix
+    # ../modules/cosmic.nix
     ../modules/auto-upgrade.nix
     ../modules/timezone.nix
     ../modules/usb.nix

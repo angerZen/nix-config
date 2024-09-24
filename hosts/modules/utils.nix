@@ -28,8 +28,8 @@
   };
 
   services.displayManager = {
-    # sessionPackages = [pkgs.hyprland];
-    autoLogin.enable = false;
+    sessionPackages = [pkgs.hyprland];
+    autoLogin.enable = true;
     autoLogin.user = "${config.var.username}";
   };
 
