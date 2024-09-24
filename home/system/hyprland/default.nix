@@ -131,9 +131,14 @@
         animate_manual_resizes = true;
       };
 
-      dwindle = {
-        pseudotile = true;
-        preserve_split = true;
+      master = {
+        new_is_master = false;
+        allow_small_split = true;
+        special_scale_factor = "0.80";
+        mfact = "0.46";
+        orientation = "center";
+        inherit_fullscreen = false;
+        always_center_master = false;
       };
 
       opengl = {nvidia_anti_flicker = false;};
