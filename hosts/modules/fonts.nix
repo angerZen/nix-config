@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }: {
-
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   fonts = {
     packages = with pkgs; [
       material-icons
@@ -20,9 +23,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
       jetbrains-mono
-      (nerdfonts.override { fonts = [ "FiraCode" "Meslo" ]; })
-      inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd
-      inputs.apple-fonts.packages.${pkgs.system}.sf-mono-nerd
+      (nerdfonts.override {fonts = ["FiraCode" "Meslo"];})
       openmoji-color
     ];
 
@@ -30,10 +31,10 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = [ "FiraCode Nerd Font Mono" "Noto Color Emoji" ];
-        sansSerif = [ "SFProDisplay Nerd Font" "Noto Color Emoji" ];
-        serif = [ "SFProDisplay Nerd Font" "Noto Color Emoji" ];
-        emoji = [ "Noto Color Emoji" ];
+        monospace = ["Inconsolata Mono" "Noto Color Emoji"];
+        sansSerif = ["Inconsolata Nerd Font" "Noto Color Emoji"];
+        serif = ["Inconsolata Nerd Font" "Noto Color Emoji"];
+        emoji = ["Noto Color Emoji"];
       };
     };
   };

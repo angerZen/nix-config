@@ -17,7 +17,7 @@
       window_padding_width = 4;
 
       # Font
-      font_family = "SFProDisplay Nerd Font";
+      font_family = "Inconsolata Nerd Font";
     };
   };
 }

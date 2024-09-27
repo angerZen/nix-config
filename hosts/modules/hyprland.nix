@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   programs = {
     hyprland = {
       enable = true;
@@ -15,5 +19,17 @@
       pkgs.xdg-desktop-portal-gtk
     ];
     xdgOpenUsePortal = true;
+  };
+  security = {
+    sudo.wheelNeedsPassword = false;
+    pam.services = {
+      hyprlock = {};
+    };
+  };
+
+  services.displayManager = {
+    sessionPackages = [pkgs.hyprland];
+    autoLogin.enable = true;
+    autoLogin.user = "${config.var.username}";
   };
 }

@@ -20,19 +20,6 @@
     EDITOR = "vscode";
   };
 
-  security = {
-    sudo.wheelNeedsPassword = false;
-    pam.services = {
-      hyprlock = {};
-    };
-  };
-
-  services.displayManager = {
-    sessionPackages = [pkgs.hyprland];
-    autoLogin.enable = true;
-    autoLogin.user = "${config.var.username}";
-  };
-
   services.libinput.enable = true;
   programs.dconf.enable = true;
   programs.direnv.enable = true;
@@ -57,6 +44,5 @@
     wget
     curl
     gparted
-    geany
   ];
 }

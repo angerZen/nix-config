@@ -157,7 +157,7 @@
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: SFProDisplay Nerd Font;
+        font-family: Inconsolata Nerd Font;
         color: @foreground;
         font-weight: 700;
       }
@@ -211,7 +211,7 @@
       }
 
       #window > * {
-        font-family: SFProDisplay Nerd Font Mono;
+        font-family: Inconsolata Nerd Font Mono;
       }
 
       #memory,

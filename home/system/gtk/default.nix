@@ -14,7 +14,7 @@
     };
 
     font = {
-      name = "SFProDisplay Nerd Font";
+      name = "Inconsolata Nerd Font";
       size = 12;
     };
   };

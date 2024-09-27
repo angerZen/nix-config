@@ -47,7 +47,7 @@
     style = ''
             @import '../../.cache/wal/colors-waybar.css';
             * {
-              font-family: "SFProDisplay Nerd Font";
+              font-family: "Inconsolata Nerd Font";
               background-image: none;
               transition: 20ms;
             }

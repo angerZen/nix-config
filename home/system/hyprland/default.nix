@@ -33,7 +33,7 @@
         "systemctl --user restart xdg-desktop-portal.service"
       ];
 
-      monitor = [",3440x1440@120,0x0,1"];
+      monitor = [",5120x2160@120,0x0,1"];
 
       bind = [
         "$mod, T, exec, ${pkgs.kitty}/bin/kitty" # Kitty
@@ -74,8 +74,8 @@
         "$mod SHIFT, 8, movetoworkspace, 8"
         "$mod SHIFT, 9, movetoworkspace, 9"
 
-        "$mod, PRINT, exec, screenshot window" # Screenshot window
-        ", PRINT, exec, screenshot monitor" # Screenshot monitor
+        "$mod, P, exec, screenshot monitor" # Screenshot window
+        "$shiftMod, PRINT, exec, screenshot window" # Screenshot monitor
         "$shiftMod, PRINT, exec, screenshot region" # Screenshot region
         "ALT, PRINT, exec, screenshot region swappy" # Screenshot region then edit
       ];
