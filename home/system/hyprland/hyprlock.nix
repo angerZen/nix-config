@@ -42,7 +42,7 @@
           text = ''cmd[update:1000] echo "<b><big> $(date +"%H:%M:%S") </big></b>"'';
           color = "$(sed -n 8p .cache/wal/colors)";
           font_size = 64;
-          font_family = "Inconsolata Nerd Font";
+          font_family = "Noto Sans";
           position = "0, 100";
           halign = "center";
           valign = "center";
@@ -54,7 +54,7 @@
             Hey <span size="larger">$USER</span>'';
           color = "$(sed -n 8p .cache/wal/colors)";
           font_size = 22;
-          font_family = "Inconsolata Nerd Font";
+          font_family = "Noto Sans";
           position = "0, 10";
           halign = "center";
           valign = "center";
@@ -65,7 +65,7 @@
           text = "Type to unlock!";
           color = "$(sed -n 8p .cache/wal/colors)";
           font_size = 18;
-          font_family = "Inconsolata Nerd Font";
+          font_family = "Noto Sans";
           position = "0, 30";
           halign = "center";
           valign = "bottom";

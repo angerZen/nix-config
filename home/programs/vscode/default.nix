@@ -1,8 +1,4 @@
-{
-  pkgs,
-  config,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium;
@@ -11,8 +7,8 @@
       "editor.cursorBlinking" = "expand";
       "editor.cursorSmoothCaretAnimation" = "on";
       "editor.cursorStyle" = "line";
-      "editor.fontFamily" = "Fira Code";
-      "editor.fontSize" = 12;
+      "editor.fontFamily" = "Inconsolata";
+      "editor.fontSize" = 14;
       "editor.lineHeight" = 1.3;
       "editor.minimap.enabled" = false;
       "editor.mouseWheelZoom" = false;
@@ -21,7 +17,7 @@
       "editor.fontLigatures" = true;
       "terminal.integrated.fontSize" = 12;
       "window.menuBarVisibility" = "hidden";
-      "window.zoomLevel" = 1;
+      "window.zoomLevel" = 1.5;
       "workbench.colorTheme" = "Wal";
       "workbench.iconTheme" = "catppuccin-mocha";
       "workbench.productIconTheme" = "Tabler";

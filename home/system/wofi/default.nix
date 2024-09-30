@@ -35,9 +35,9 @@
         /** ********** Fonts ********** **/
 
         * {
-          font-family: "Inconsolata Nerd Font";
+          font-family: "Noto Sans";
           font-weight: 500;
-          font-size: 14px;
+          font-size: 20px;
         }
 
         #window {

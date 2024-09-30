@@ -17,7 +17,8 @@
       window_padding_width = 4;
 
       # Font
-      font_family = "Inconsolata Nerd Font";
+      font_family = "Inconsolata";
+      font_size = 14;
     };
   };
 }

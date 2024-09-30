@@ -157,9 +157,9 @@
         border: none;
         border-radius: 0;
         min-height: 0;
-        font-family: Inconsolata Nerd Font;
+        font-family: Noto Sans;
         color: @foreground;
-        font-weight: 700;
+        font-weight: 600;
       }
 
       window#waybar {
@@ -167,7 +167,7 @@
         transition-property: background-color;
         transition-duration: 0.5s;
         border-radius: 10px;
-        font-size: 16px;
+        font-size: 20px;
       }
 
       .modules-left, .modules-center, .modules-right {
@@ -211,7 +211,7 @@
       }
 
       #window > * {
-        font-family: Inconsolata Nerd Font Mono;
+        font-family: Inconsolata;
       }
 
       #memory,

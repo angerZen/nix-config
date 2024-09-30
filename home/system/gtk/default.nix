@@ -14,14 +14,14 @@
     };
 
     font = {
-      name = "Inconsolata Nerd Font";
-      size = 12;
+      name = "Noto Sans";
+      size = 18;
     };
   };
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.catppuccin-cursors.mochaDark;
     name = "Catppuccin-Mocha-Dark";
-    size = 14;
+    size = 12;
   };
 }

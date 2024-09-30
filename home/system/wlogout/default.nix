@@ -47,7 +47,7 @@
     style = ''
             @import '../../.cache/wal/colors-waybar.css';
             * {
-              font-family: "Inconsolata Nerd Font";
+              font-family: "Noto Sans";
               background-image: none;
               transition: 20ms;
             }

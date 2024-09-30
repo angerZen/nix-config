@@ -99,8 +99,8 @@
 
       decoration = {
         rounding = 2;
-        active_opacity = 0.95;
-        inactive_opacity = 0.5;
+        active_opacity = 0.98;
+        inactive_opacity = 0.7;
         drop_shadow = true;
         shadow_ignore_window = true;
         shadow_offset = "0 8";

@@ -23,7 +23,7 @@
       noto-fonts-cjk
       noto-fonts-emoji
       jetbrains-mono
-      (nerdfonts.override {fonts = ["FiraCode" "Meslo"];})
+      (nerdfonts.override {fonts = ["Inconsolata"];})
       openmoji-color
     ];
 
@@ -31,9 +31,9 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Inconsolata Mono" "Noto Color Emoji"];
-        sansSerif = ["Inconsolata Nerd Font" "Noto Color Emoji"];
-        serif = ["Inconsolata Nerd Font" "Noto Color Emoji"];
+        monospace = ["Inconsolata" "Noto Color Emoji"];
+        sansSerif = ["Noto Sans" "Noto Color Emoji"];
+        serif = ["Noto Serif" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];
       };
     };
