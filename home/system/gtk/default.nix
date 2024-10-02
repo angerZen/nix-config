@@ -4,8 +4,8 @@
     enable = true;
 
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = "Papirus";
+      package = pkgs.papirus-icon-theme;
     };
 
     theme = {
@@ -15,7 +15,7 @@
 
     font = {
       name = "Noto Sans";
-      size = 18;
+      size = 14;
     };
   };
   home.pointerCursor = {

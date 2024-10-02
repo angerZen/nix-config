@@ -191,7 +191,7 @@
         padding: 4px 12px;
         margin: 4px 2px;
         border-radius: 4px;
-        background-color: @color2;
+        background-color: @color6;
         color: @foreground;
       }
 
@@ -240,7 +240,7 @@
       #custom-logo {
         padding-right: 8px;
         padding-left: 8px;
-        color: @color7;
+        color: @color6;
       }
 
       @keyframes blink {
