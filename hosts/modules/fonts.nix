@@ -31,7 +31,7 @@
 
     fontconfig = {
       defaultFonts = {
-        monospace = ["Inconsolata" "Noto Color Emoji"];
+        monospace = ["Inconsolata Nerd Font" "Noto Color Emoji"];
         sansSerif = ["Noto Sans" "Noto Color Emoji"];
         serif = ["Noto Serif" "Noto Color Emoji"];
         emoji = ["Noto Color Emoji"];

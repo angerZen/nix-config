@@ -16,15 +16,13 @@
         "margin-left" = 2;
         "margin-right" = 2;
         height = 28;
-        modules-left = ["custom/logo" "hyprland/window"];
-        modules-center = ["hyprland/workspaces"];
+        modules-left = ["custom/logo" "hyprland/workspaces"];
+        modules-center = ["clock"];
         modules-right = [
           "tray"
-          "backlight"
           "pulseaudio"
           "pulseaudio#microphone"
           "custom/wallpaper"
-          "clock"
           "custom/power"
         ];
 
@@ -35,17 +33,6 @@
 
           "icon-size" = 28;
           "tooltip-format" = "{title}";
-        };
-        "hyprland/window" = {
-          "format" = "{title:30}";
-          "max-length" = 30;
-          "separate-outputs" = true;
-          rewrite = {
-            "\\s*(.*)\\s+" = "$1"; # Remove trailing whitespace
-            # "\\s*" = # TODO FIXME
-            #   "\${USER}@\${HOST}"; # Replace empty string with your username
-            ".* - LibreWolf" = "LibreWolf";
-          };
         };
 
         "hyprland/workspaces" = {
@@ -69,8 +56,6 @@
             "1" = [];
             "2" = [];
             "3" = [];
-            "4" = [];
-            "5" = [];
           };
         };
 
@@ -166,12 +151,12 @@
         background-color: transparent;
         transition-property: background-color;
         transition-duration: 0.5s;
-        border-radius: 10px;
+        border-radius: 5px;
         font-size: 20px;
       }
 
       .modules-left, .modules-center, .modules-right {
-        border-radius: 10px;
+        border-radius: 5px;
         background-color: @background;
         padding: 2px 6px;
       }
@@ -190,7 +175,7 @@
         box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
         padding: 4px 12px;
         margin: 4px 2px;
-        border-radius: 4px;
+        border-radius: 5px;
         background-color: @color6;
         color: @foreground;
       }
@@ -211,7 +196,7 @@
       }
 
       #window > * {
-        font-family: Inconsolata;
+        font-family: Noto Sans;
       }
 
       #memory,
@@ -225,7 +210,7 @@
       #clock,
       #tray,
       #backlight{
-        border-radius: 9px;
+        border-radius: 5px;
         margin: 4px 2px;
         padding: 4px 12px;
         background-color: @background;
@@ -274,7 +259,7 @@
       }
 
       tooltip {
-        border-radius: 8px;
+        border-radius: 5px;
         padding: 15px;
         background-color: @background;
         color: @color6;

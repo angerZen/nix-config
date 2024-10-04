@@ -7,13 +7,13 @@
       "editor.cursorBlinking" = "expand";
       "editor.cursorSmoothCaretAnimation" = "on";
       "editor.cursorStyle" = "line";
-      "editor.fontFamily" = "Inconsolata";
+      "editor.fontFamily" = "Inconsolata Nerd Font";
       "editor.fontSize" = 14;
-      "editor.lineHeight" = 1.3;
+      "editor.lineHeight" = 1.2;
       "editor.minimap.enabled" = false;
       "editor.mouseWheelZoom" = false;
       "tabnine.experimentalAutoImports" = true;
-      "terminal.integrated.fontFamily" = "Fira Code";
+      "terminal.integrated.fontFamily" = "Inconsolata Nerd Font";
       "editor.fontLigatures" = true;
       "terminal.integrated.fontSize" = 12;
       "window.menuBarVisibility" = "hidden";
