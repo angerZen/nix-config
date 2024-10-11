@@ -46,8 +46,4 @@
     $color14 = rgb({color14.strip})
     $color15 = rgb({color15.strip})
   '';
-
-  # home.packages = with pkgs; [
-  #   pywal16
-  # ];
 }
