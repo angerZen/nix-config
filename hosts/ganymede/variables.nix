@@ -19,7 +19,7 @@
     };
 
     autoUpgrade = false;
-    autoGarbageCollector = false;
+    autoGarbageCollector = true;
 
     # USBGuard
     # If usbguard enabled: set yours pref USB devices (change {id} to your trusted USB device), use `lsusb` command (from usbutils package) to get list

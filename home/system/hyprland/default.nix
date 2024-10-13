@@ -5,6 +5,19 @@
     ./hyprcursor.nix
   ];
 
+  home.packages = with pkgs: [
+    nautilus
+    pamixer
+    pavucontrol
+    hyprshot
+    hyprpicker
+    wf-recorder
+    wlr-randr
+    wl-clipboard
+    brightnessctl
+    xwaylandvideobridge
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
