@@ -1,7 +1,8 @@
 {config, ...}: {
   imports = [
     ../modules/fonts.nix
-    ../modules/cosmic.nix
+    #../modules/hyprland.nix
+    ../modules/kde.nix
     ../modules/auto-upgrade.nix
     ../modules/timezone.nix
     ../modules/usb.nix
@@ -13,7 +14,6 @@
     ../modules/network-manager.nix
     ../modules/home-manager.nix
     ../modules/utils.nix
-    ../modules/steam.nix
 
     ./hardware-configuration.nix
     ./variables.nix
