@@ -22,7 +22,8 @@
     ./hardware-configuration.nix
     ./variables.nix
   ];
-
+  
+  boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   home-manager.users."${config.var.username}" = import ./home.nix;
 
   # Don't touch this
