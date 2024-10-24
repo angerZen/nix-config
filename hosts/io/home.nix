@@ -8,6 +8,7 @@
 
     # Programs
     ../../home/programs/btop
+    ../../home/programs/firefox
     ../../home/programs/kitty
     ../../home/programs/neofetch
     ../../home/programs/lf
@@ -21,16 +22,16 @@
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    ../../home/system/mako
-    ../../home/system/gtk
+    #../../home/system/mako
+    #../../home/system/gtk
     ../../home/system/zathura
-    ../../home/system/hyprland
-    ../../home/system/waybar
-    ../../home/system/wlogout
-    ../../home/system/wofi
+    #../../home/system/hyprland
+    #../../home/system/waybar
+    #../../home/system/wlogout
+    #../../home/system/wofi
     ../../home/system/udiskie
-    ../../home/system/pywal
-    ../../home/system/waypaper
+    #../../home/system/pywal
+    #../../home/system/waypaper
   ];
 
   home = {
@@ -41,7 +42,6 @@
       nautilus
       proton-pass
       vlc
-      brave
 
       # Dev
       nixd
@@ -55,29 +55,9 @@
       optipng
       pfetch
       pandoc
-      pamixer
-      pavucontrol
-      hyprshot
-      hyprpicker
       swappy
       imv
-      wf-recorder
-      xdg-desktop-portal-hyprland
-      wlr-randr
-      wl-clipboard
-      brightnessctl
-      gnome-themes-extra
-      wlsunset
-      xwayland
-      xdg-desktop-portal-gtk
-      qt5ct
-      libva
       dconf
-      wayland-utils
-      wayland-protocols
-      meson
-      mate.mate-polkit
-      xwaylandvideobridge
     ];
 
     # Import wallpapers into $HOME/wallpapers
