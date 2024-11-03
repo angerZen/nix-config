@@ -10517,7 +10517,7 @@
 
     .budgie-popover.places-menu .alternative-label {
       padding: 3px;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     .budgie-popover.workspace-popover flowboxchild {

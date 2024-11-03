@@ -22,6 +22,6 @@
     gtk.enable = true;
     package = pkgs.catppuccin-cursors.mochaDark;
     name = "Catppuccin-Mocha-Dark";
-    size = 12;
+    size = 14;
   };
 }

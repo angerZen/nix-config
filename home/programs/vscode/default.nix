@@ -15,7 +15,7 @@
       "tabnine.experimentalAutoImports" = true;
       "terminal.integrated.fontFamily" = "Inconsolata Nerd Font";
       "editor.fontLigatures" = true;
-      "terminal.integrated.fontSize" = 12;
+      "terminal.integrated.fontSize" = 14;
       "window.menuBarVisibility" = "hidden";
       "window.zoomLevel" = 1.5;
       "workbench.colorTheme" = "Wal";
