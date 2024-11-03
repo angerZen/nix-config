@@ -11,7 +11,6 @@
     ../../home/programs/firefox
     ../../home/programs/alacritty
     ../../home/programs/neofetch
-    ../../home/programs/lf
     ../../home/programs/git
     ../../home/programs/vscode
     ../../home/programs/discord

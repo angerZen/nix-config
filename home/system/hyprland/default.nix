@@ -11,7 +11,7 @@
     pavucontrol
     hyprshot
     hyprpicker
-    wf-recorder
+    # wf-recorder
     wlr-randr
     wl-clipboard
     brightnessctl
@@ -48,7 +48,7 @@
       monitor = [",5120x2160@120,0x0,1"];
 
       bind = [
-        "$mod, T, exec, ${pkgs.kitty}/bin/kitty" # Kitty
+        "$mod, T, exec, ${pkgs.alacritty}/bin/alacritty"
         "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus" #Nautilus
         "$mod, B, exec, ${pkgs.brave}/bin/brave" # Brave
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock

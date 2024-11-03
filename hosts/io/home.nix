@@ -9,9 +9,8 @@
     # Programs
     ../../home/programs/btop
     ../../home/programs/firefox
-    ../../home/programs/kitty
+    ../../home/programs/alacritty
     ../../home/programs/neofetch
-    ../../home/programs/lf
     ../../home/programs/git
     ../../home/programs/vscode
     ../../home/programs/discord

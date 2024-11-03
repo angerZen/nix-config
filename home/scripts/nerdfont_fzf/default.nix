@@ -21,12 +21,8 @@ let
     jq 'del(.METADATA)' "glyphnames.json"
   '';
 
-  nerdfont-popup = pkgs.writeShellScriptBin "nerdfont-popup" ''
-    ${pkgs.kitty}/bin/kitty --class floating -o font_size=18 -c nerdfont-fzf 2>/dev/null
-  '';
-
 in {
-  home.packages = [ nerdfont-fzf nerdfont-fzf-fetch nerdfont-popup ];
+  home.packages = [ nerdfont-fzf nerdfont-fzf-fetch ];
 
   xdg.configFile."nerdfont_glyphnames.json" = {
     source = ./nerdfont_glyphnames.json;
