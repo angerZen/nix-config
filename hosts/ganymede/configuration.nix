@@ -3,9 +3,9 @@
     ../modules/fonts.nix
     ../modules/nvidia.nix
     # ../modules/greetd.nix
-    # ../modules/hyprland.nix
+    ../modules/hyprland.nix
     # ../modules/cosmic.nix
-    ../modules/kde.nix
+    # ../modules/kde.nix
     ../modules/auto-upgrade.nix
     ../modules/timezone.nix
     ../modules/usb.nix

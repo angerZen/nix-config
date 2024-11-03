@@ -22,17 +22,17 @@
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    # ../../home/system/mako
-    # ../../home/system/gtk
+    ../../home/system/mako
+    ../../home/system/gtk
     ../../home/system/zathura
-    # ../../home/system/hyprland
-    # ../../home/system/waybar
-    # ../../home/system/wlogout
-    # ../../home/system/wofi
+    ../../home/system/hyprland
+    ../../home/system/waybar
+    ../../home/system/wlogout
+    ../../home/system/wofi
     ../../home/system/udiskie
-    # ../../home/system/pywal
+    ../../home/system/pywal
     # ../../home/system/wallust
-    # ../../home/system/waypaper
+    ../../home/system/waypaper
   ];
 
   home = {
@@ -70,6 +70,5 @@
     # Don't touch this
     stateVersion = "24.05";
   };
-
   programs.home-manager.enable = true;
 }

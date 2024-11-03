@@ -5,7 +5,7 @@
     ./hyprcursor.nix
   ];
 
-  home.packages = with pkgs: [
+  home.packages = with pkgs; [
     nautilus
     pamixer
     pavucontrol
@@ -15,7 +15,6 @@
     wlr-randr
     wl-clipboard
     brightnessctl
-    xwaylandvideobridge
   ];
 
   wayland.windowManager.hyprland = {
