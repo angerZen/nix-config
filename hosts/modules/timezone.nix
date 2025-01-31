@@ -1,4 +1,5 @@
 { config, ... }: {
+  time.hardwareClockInLocalTime = true;
   time.timeZone = config.var.timeZone;
   i18n.defaultLocale = config.var.defaultLocale;
   i18n.extraLocaleSettings = {
