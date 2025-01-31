@@ -103,7 +103,7 @@
         gaps_in = 4;
         gaps_out = 2;
         border_size = 2;
-        "col.active_border" = "rgba(255, 255, 255, 0.8)";
+        "col.active_border" = "rgba(ffffff55)";
         "col.inactive_border" = "rgba(00000055)";
         border_part_of_window = true;
         layout = "master";
@@ -113,12 +113,13 @@
         rounding = 2;
         active_opacity = 0.98;
         inactive_opacity = 0.7;
-        drop_shadow = true;
-        shadow_ignore_window = true;
-        shadow_offset = "0 8";
-        shadow_range = 50;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000099)";
+        shadow = {
+          enabled = true;
+          ignore_window = true;
+          offset = "0 8";
+          range = 50;
+          render_power = 3;
+        };
         blur = {
           size = 3;
           passes = 2;
@@ -144,7 +145,6 @@
       };
 
       dwindle = {
-        no_gaps_when_only = true;
         force_split = 0;
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
@@ -156,12 +156,10 @@
       master = {
         # new_status = "master";
         special_scale_factor = 0.8;
-        no_gaps_when_only = false;
         allow_small_split = true;
         mfact = 0.45;
         orientation = "center";
         inherit_fullscreen = false;
-        always_center_master = false;
       };
 
       opengl = {nvidia_anti_flicker = false;};

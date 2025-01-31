@@ -22,7 +22,7 @@
       noto-fonts-cjk-sans
       noto-fonts-emoji
       jetbrains-mono
-      (nerdfonts.override {fonts = ["Inconsolata"];})
+      nerd-fonts.inconsolata
       openmoji-color
     ];
 
