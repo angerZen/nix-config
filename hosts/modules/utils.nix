@@ -44,5 +44,6 @@
     wget
     curl
     gparted
+    keymapp
   ];
 }
