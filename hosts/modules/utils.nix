@@ -45,5 +45,6 @@
     curl
     gparted
     keymapp
+    vivaldi
   ];
 }
