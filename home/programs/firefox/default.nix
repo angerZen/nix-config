@@ -40,7 +40,7 @@
         engines = {
           "angerSearch" = {
                 urls = [{ template = "http://10.0.0.5:6060/?q={searchTerms}"; }];
-                iconUpdateURL = "https://nixos.wiki/favicon.png";
+                icon = "https://nixos.wiki/favicon.png";
                 updateInterval = 24 * 60 * 60 * 1000; # every day
                 definedAliases = [ "@as" ];
               };
