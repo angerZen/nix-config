@@ -2,8 +2,7 @@
   programs.vscode = {
     enable = true;
     # package = pkgs.vscodium;
-    profiles.default = {
-      userSettings = {
+    profiles.default.userSettings = {
         "window.titleBarStyle" = "custom";
         "editor.cursorBlinking" = "expand";
         "editor.cursorSmoothCaretAnimation" = "on";
@@ -32,9 +31,9 @@
         };
         "[typescript]" = {
           "editor.defaultFormatter" = "esbenp.prettier-vscode";
-          };
         };
-      keybindings = [
+    };
+    profiles.default.keybindings = [
         {
           "key" = "ctrl+shift+s";
           "command" = "editor.action.formatDocument";
@@ -60,12 +59,11 @@
           "command" = "editor.action.copyLinesUpAction";
           "when" = "editorTextFocus";
         }
-      ];
-      extensions = with pkgs.vscode-extensions; [
+    ];
+    profiles.default.extensions = with pkgs.vscode-extensions; [
         bbenoist.nix
         jnoortheen.nix-ide
         catppuccin.catppuccin-vsc-icons
-      ];
-    };
+    ];
   };
 }
