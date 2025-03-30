@@ -30,6 +30,22 @@
             _: { src = builtins.fetchTarball https://discord.com/api/download?platform=linux&format=tar.gz; }
           );
         })
+        (final: prev: {
+          vivaldi =
+          (prev.vivaldi.overrideAttrs (oldAttrs: {
+            dontWrapQtApps = false;
+            dontPatchELF = true;
+            nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
+            }))
+            .override {
+              commandLineArgs = ''
+              --enable-features=UseOzonePlatform
+              --ozone-platform=wayland
+              --ozone-platform-hint=auto
+              --enable-features=WaylandWindowDecorations
+              '';
+            };
+          })
      ];
 
   home.packages = with pkgs; [
