@@ -45,6 +45,14 @@
     curl
     gparted
     keymapp
-    vivaldi
+    (vivaldi.overrideAttrs (old: {
+      buildInputs = (old.buildInputs or [ ]) ++ [
+        libsForQt5.qtwayland
+        libsForQt5.qtx11extras
+        kdePackages.plasma-integration.qt5
+        kdePackages.kio-extras-kf5
+        kdePackages.breeze.qt5
+      ];
+    }))
   ];
 }
