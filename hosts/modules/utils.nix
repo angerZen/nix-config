@@ -34,6 +34,25 @@
     dev.enable = false;
   };
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      vivaldi =
+      (prev.vivaldi.overrideAttrs (oldAttrs: {
+        dontWrapQtApps = false;
+        dontPatchELF = true;
+        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
+        }))
+        .override {
+          commandLineArgs = ''
+          --enable-features=UseOzonePlatform
+          --ozone-platform=wayland
+          --ozone-platform-hint=auto
+          --enable-features=WaylandWindowDecorations
+          '';
+        };
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
     fd
     bc
