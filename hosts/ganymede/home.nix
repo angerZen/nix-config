@@ -8,7 +8,8 @@
 
     # Programs
     ../../home/programs/btop
-    ../../home/programs/firefox
+    # ../../home/programs/firefox
+    ../../home/programs/librewolf
     ../../home/programs/alacritty
     ../../home/programs/neofetch
     ../../home/programs/git
@@ -16,14 +17,13 @@
     ../../home/programs/discord
     ../../home/programs/games
     ../../home/programs/neovim
-    ../../home/programs/vivaldi
 
     # Scripts
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
     # ../../home/system/mako
-    ../../home/system/gtk
+    # ../../home/system/gtk
     ../../home/system/zathura
     # ../../home/system/hyprland
     # ../../home/system/waybar
@@ -42,6 +42,7 @@
     packages = with pkgs; [
       nautilus
       proton-pass
+      protonmail-desktop
       vlc
 
       # Dev
