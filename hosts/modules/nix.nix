@@ -2,7 +2,7 @@
   config,
   ...
 }: {
-  nixpkgs.config.allowUnfreePredicate = _: true;
+  nixpkgs.config.allowUnfreePredicate = pkg: true;
   nixpkgs.config.permittedInsecurePackages = [
      "openssl-1.1.1w"
    ];
