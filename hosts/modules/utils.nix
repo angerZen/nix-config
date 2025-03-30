@@ -18,6 +18,7 @@
     XDG_DATA_HOME = "$HOME/.local/share";
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     EDITOR = "vscode";
+    QT_QPA_PLATFORM = "wayland;xcb";
   };
 
   services.libinput.enable = true;
@@ -34,25 +35,6 @@
     dev.enable = false;
   };
 
-  nixpkgs.overlays = [
-    (final: prev: {
-      vivaldi =
-      (prev.vivaldi.overrideAttrs (oldAttrs: {
-        dontWrapQtApps = false;
-        dontPatchELF = true;
-        nativeBuildInputs = oldAttrs.nativeBuildInputs ++ [pkgs.kdePackages.wrapQtAppsHook];
-        }))
-        .override {
-          commandLineArgs = ''
-          --enable-features=UseOzonePlatform
-          --ozone-platform=wayland
-          --ozone-platform-hint=auto
-          --enable-features=WaylandWindowDecorations
-          '';
-        };
-    })
-  ];
-
   environment.systemPackages = with pkgs; [
     fd
     bc
@@ -63,7 +45,6 @@
     wget
     curl
     gparted
-    keymapp
-    vivaldi
+    keymapp  
   ];
 }

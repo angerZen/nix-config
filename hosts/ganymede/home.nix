@@ -16,6 +16,7 @@
     ../../home/programs/discord
     ../../home/programs/games
     ../../home/programs/neovim
+    ../../home/programs/vivaldi
 
     # Scripts
     ../../home/scripts # All scripts
