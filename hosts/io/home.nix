@@ -8,7 +8,8 @@
 
     # Programs
     ../../home/programs/btop
-    ../../home/programs/firefox
+    ../../home/programs/librewolf
+    ../../home/programs/vivaldi
     ../../home/programs/alacritty
     ../../home/programs/neofetch
     ../../home/programs/git
@@ -40,6 +41,7 @@
     packages = with pkgs; [
       nautilus
       proton-pass
+      protonmail-desktop
       vlc
 
       # Dev
