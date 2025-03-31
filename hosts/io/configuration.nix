@@ -6,7 +6,7 @@
     ../modules/auto-upgrade.nix
     ../modules/timezone.nix
     ../modules/usb.nix
-    ../modules/systemd-boot.nix
+    ../modules/systemd-boot-io.nix
     ../modules/users.nix
     ../modules/audio.nix
     ../modules/bluetooth.nix
