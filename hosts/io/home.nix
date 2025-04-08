@@ -59,6 +59,7 @@
       swappy
       imv
       dconf
+      rocketchat-desktop
     ];
 
     # Import wallpapers into $HOME/wallpapers
