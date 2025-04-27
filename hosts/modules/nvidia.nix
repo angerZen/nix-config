@@ -22,7 +22,7 @@
       powerManagement.enable = true; # This can cause sleep/suspend to fail and saves entire VRAM to /tmp/
       forceFullCompositionPipeline = true;
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      package = config.boot.kernelPackages.nvidiaPackages.latest;
     };
   };
 }
