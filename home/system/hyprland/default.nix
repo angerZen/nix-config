@@ -105,7 +105,6 @@
         border_size = 2;
         "col.active_border" = "rgba(ffffff55)";
         "col.inactive_border" = "rgba(00000055)";
-        border_part_of_window = true;
         layout = "master";
       };
 
