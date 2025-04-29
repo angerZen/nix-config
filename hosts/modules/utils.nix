@@ -46,5 +46,6 @@
     curl
     gparted
     keymapp
+    ncdu
   ];
 }

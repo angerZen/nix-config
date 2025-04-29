@@ -22,15 +22,15 @@
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    # ../../home/system/mako
-    # ../../home/system/gtk
+    ../../home/system/mako
+    ../../home/system/gtk
     ../../home/system/zathura
-    # ../../home/system/hyprland
-    # ../../home/system/waybar
+    ../../home/system/hyprland
+    ../../home/system/waybar
     ../../home/system/wlogout
-    # ../../home/system/wofi
+    ../../home/system/wofi
     ../../home/system/udiskie
-    # ../../home/system/pywal
+    ../../home/system/pywal
     # ../../home/system/wallust
     ../../home/system/waypaper
   ];
