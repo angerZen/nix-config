@@ -174,12 +174,7 @@
       };
 
       windowrule = [
-        "animation popin,^(wlogout)$"
-
-        "size 700 800, pavucontrol"
-        "move 1370 72, pavucontrol"
         "float,title:^(Volume Control)$"
-        "float,imv"
         "move 510 290,imv"
         "size 900 500,imv"
       ];
@@ -188,7 +183,6 @@
         "float, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
-        "idleinhibit fullscreen, class:^(firefox)$"
         "float, title:Bluetooth Devices"
         "move 20% 20%, title:Bluetooth Devices"
         "size 60% 60%, title:Bluetooth Devices"
