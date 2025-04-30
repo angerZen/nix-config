@@ -175,8 +175,6 @@
 
       windowrule = [
         "float,title:^(Volume Control)$"
-        "move 510 290,imv"
-        "size 900 500,imv"
       ];
 
       windowrulev2 = [
