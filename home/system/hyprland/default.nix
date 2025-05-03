@@ -103,8 +103,8 @@
         gaps_in = 4;
         gaps_out = 2;
         border_size = 2;
-        col.active_border = "$color2";
-        col.inactive_border = "$color3";
+        "col.active_border" = "$color2";
+        "col.inactive_border" = "$color3";
         layout = "master";
       };
 
