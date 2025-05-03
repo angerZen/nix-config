@@ -8,7 +8,6 @@
 
     # Programs
     ../../home/programs/btop
-    ../../home/programs/librewolf
     ../../home/programs/vivaldi
     ../../home/programs/alacritty
     ../../home/programs/neofetch
