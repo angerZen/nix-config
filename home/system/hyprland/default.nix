@@ -70,7 +70,7 @@
       bind = [
         "$mod, T, exec, ${pkgs.alacritty}/bin/alacritty"
         "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus" #Nautilus
-        "$mod, V, exec, ${pkgs.vivaldi}/bin/vivaldi" # Brave
+        "$mod, V, exec, ${pkgs.vivaldi}/bin/vivaldi" # Vivaldi
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, R, exec, menu" # Launcher
