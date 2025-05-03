@@ -11,8 +11,8 @@
         layer = "top";
         position = "top";
         spacing = 0;
-        "margin-top" = 2;
-        "margin-bottom" = 2;
+        "margin-top" = 0;
+        "margin-bottom" = 0;
         "margin-left" = 2;
         "margin-right" = 2;
         height = 28;
@@ -158,7 +158,8 @@
       .modules-left, .modules-center, .modules-right {
         border-radius: 5px;
         background-color: @background;
-        padding: 2px 6px;
+        padding: 2px 4px;
+        margin-bottom: 2px;
       }
 
       window#waybar.hidden {
@@ -173,10 +174,10 @@
         all: initial; /* Remove GTK theme values (waybar #1351) */
         min-width: 0; /* Fix weird spacing in materia (waybar #450) */
         box-shadow: inset 0 -3px transparent; /* Use box-shadow instead of border so the text isn't offset */
-        padding: 4px 12px;
-        margin: 4px 2px;
+        padding: 0px 6px;
+        margin: 0px 4px;
         border-radius: 5px;
-        background-color: @color6;
+        background-color: @color4;
         color: @foreground;
       }
 
@@ -211,8 +212,8 @@
       #tray,
       #backlight{
         border-radius: 5px;
-        margin: 4px 2px;
-        padding: 4px 12px;
+        margin: 0px 4px;
+        padding: 0px 6px;
         background-color: @background;
         color: @color6;
       }
@@ -224,7 +225,7 @@
 
       #custom-logo {
         padding-right: 8px;
-        padding-left: 8px;
+        padding-left: 4px;
         color: @color6;
       }
 

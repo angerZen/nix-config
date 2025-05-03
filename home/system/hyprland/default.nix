@@ -29,25 +29,24 @@
         "/home/angerzen/.cache/wal/colors-hyprland.conf"
       ];
 
-          env = [
-            "XDG_CURRENT_DESKTOP,Hyprland"
-            "XDG_SESSION_DESKTOP,Hyprland"
-            "XDG_SESSION_TYPE,wayland"
-            "GDK_BACKEND,wayland,x11,*"
-            "NIXOS_OZONE_WL,1"
-            "ELECTRON_OZONE_PLATFORM_HINT,auto"
-            "MOZ_ENABLE_WAYLAND,1"
-            "OZONE_PLATFORM,wayland"
-            "EGL_PLATFORM,wayland"
-            "CLUTTER_BACKEND,wayland"
-            "SDL_VIDEODRIVER,wayland"
-            "QT_QPA_PLATFORM,wayland;xcb"
-            "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
-            "QT_QPA_PLATFORMTHEME,qt6ct"
-            "QT_AUTO_SCREEN_SCALE_FACTOR,1"
-            "WLR_RENDERER_ALLOW_SOFTWARE,1"
-            "NIXPKGS_ALLOW_UNFREE,1"
-          ];
+      env = [
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "GDK_BACKEND,wayland,x11,*"
+        "NIXOS_OZONE_WL,1"
+        "ELECTRON_OZONE_PLATFORM_HINT,auto"
+        "MOZ_ENABLE_WAYLAND,1"
+        "OZONE_PLATFORM,wayland"
+        "EGL_PLATFORM,wayland"
+        "CLUTTER_BACKEND,wayland"
+        "SDL_VIDEODRIVER,wayland"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_QPA_PLATFORMTHEME,qt6ct"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "WLR_RENDERER_ALLOW_SOFTWARE,1"
+      ];
 
       exec-once = [
         "startup"
@@ -123,14 +122,14 @@
         gaps_in = 4;
         gaps_out = 2;
         border_size = 2;
-        "col.active_border" = "$color2";
-        "col.inactive_border" = "$color3";
+        "col.active_border" = "$color3";
+        "col.inactive_border" = "$color4";
         layout = "master";
       };
 
       decoration = {
         rounding = 2;
-        active_opacity = 0.98;
+        active_opacity = 1.0;
         inactive_opacity = 0.7;
         shadow = {
           enabled = true;
@@ -164,7 +163,7 @@
       };
 
       dwindle = {
-        force_split = 0;
+        force_split = 2;
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
@@ -173,7 +172,6 @@
       };
 
       master = {
-        # new_status = "master";
         special_scale_factor = 0.8;
         allow_small_split = true;
         mfact = 0.45;
@@ -195,6 +193,7 @@
 
       windowrule = [
         "float,title:^(Volume Control)$"
+        "size 20% 60%, title:^(Volume Control)$"
       ];
 
       windowrulev2 = [
@@ -204,6 +203,8 @@
         "float, title:Bluetooth Devices"
         "move 20% 20%, title:Bluetooth Devices"
         "size 60% 60%, title:Bluetooth Devices"
+        "idleinhibit fullscreen, class:.*"
+        "noblur, xwayland:1"
       ];
 
       animations = let

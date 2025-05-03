@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  # imports = [./theme.nix];
+  imports = [./theme.nix];
   gtk = {
     enable = true;
 
@@ -15,7 +15,7 @@
 
     font = {
       name = "Noto Sans";
-      size = 14;
+      size = 12;
     };
   };
   home.pointerCursor = {

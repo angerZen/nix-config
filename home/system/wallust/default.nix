@@ -38,8 +38,8 @@
     threshold = 11
 
     [templates]
-    #cava.template = 'colors-cava'
-    #cava.target = '~/.config/cava/config'
+    cava.template = 'colors-cava'
+    cava.target = '~/.config/cava/config'
 
     hypr.template = 'colors-hyprland.conf'
     hypr.target = '~/.config/wallust/wallust-hyprland.conf'
