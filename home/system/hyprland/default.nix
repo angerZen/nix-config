@@ -50,13 +50,13 @@
       bind = [
         "$mod, T, exec, ${pkgs.alacritty}/bin/alacritty"
         "$mod, E, exec, ${pkgs.nautilus}/bin/nautilus" #Nautilus
-        "$mod, B, exec, ${pkgs.brave}/bin/brave" # Brave
+        "$mod, V, exec, ${pkgs.vivaldi}/bin/vivaldi" # Brave
         "$mod, L, exec, ${pkgs.hyprlock}/bin/hyprlock" # Lock
         "$mod, X, exec, powermenu" # Powermenu
         "$mod, R, exec, menu" # Launcher
         "$mod, S, layoutmsg, swapwithmaster master"
         "$mod, Q, killactive," # Close window
-        # "$mod, W, exec, waypaper"
+        "$mod, W, exec, ${pkgs.waypaper}/bin/waypaper"
         "$mod, Space, togglefloating," # Toggle Floating
         "$mod, F, fullscreen" # Toggle Fullscreen
         "$mod, left, movefocus, l" # Move focus left
@@ -103,8 +103,8 @@
         gaps_in = 4;
         gaps_out = 2;
         border_size = 2;
-        "col.active_border" = "rgba(ffffff55)";
-        "col.inactive_border" = "rgba(00000055)";
+        col.active_border = "$color2";
+        col.inactive_border = "$color3";
         layout = "master";
       };
 
@@ -235,6 +235,6 @@
         ];
       };
     };
-    extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
+    # extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
   };
 }
