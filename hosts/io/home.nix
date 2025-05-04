@@ -15,7 +15,6 @@
     ../../home/programs/vscode
     ../../home/programs/discord
     # ../../home/programs/games
-    ../../home/programs/neovim
 
     # Scripts
     ../../home/scripts # All scripts
