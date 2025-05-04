@@ -58,6 +58,10 @@
       imv
       dconf
       rocketchat-desktop
+      pkgs.qt6Packages.qtstyleplugin-kvantum
+      pkgs.qt6Packages.qt6ct
+      pkgs.libsForQt5.qtstyleplugin-kvantum
+      pkgs.libsForQt5.qt5ct
     ];
 
     # Import wallpapers into $HOME/wallpapers

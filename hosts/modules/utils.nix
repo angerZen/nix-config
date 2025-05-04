@@ -19,6 +19,18 @@
     PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
     EDITOR = "vscode";
     QT_QPA_PLATFORM = "wayland;xcb";
+    GDK_BACKEND = "wayland,x11,*";
+    NIXOS_OZONE_WL = "1";
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    MOZ_ENABLE_WAYLAND = "1";
+    OZONE_PLATFORM = "wayland";
+    EGL_PLATFORM = "wayland";
+    CLUTTER_BACKEND = "wayland";
+    SDL_VIDEODRIVER = "wayland";
+    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
+    QT_QPA_PLATFORMTHEME = "qt6ct";
+    QT_AUTO_SCREEN_SCALE_FACTOR = "0.8";
+    WLR_RENDERER_ALLOW_SOFTWARE = "1";
   };
 
   services.libinput.enable = true;

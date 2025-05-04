@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  imports = [./theme.nix];
+  imports = [
+    # ./theme.nix
+    ./qt.nix
+  ];
   gtk = {
     enable = true;
 

@@ -138,11 +138,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1746317522,
-        "narHash": "sha256-/jZ4Wd4HHUEWPSlNj48k1E4Mh+1fUbwI/vSlPPIMG3U=",
+        "lastModified": 1746369725,
+        "narHash": "sha256-m3ai7LLFYsymMK0uVywCceWfUhP0k3CALyFOfcJACqE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "621986fed37c5d0cb8df010ed8369694dc47c09b",
+        "rev": "1a1793f6d940d22c6e49753548c5b6cb7dc5545d",
         "type": "github"
       },
       "original": {
@@ -228,18 +228,16 @@
       },
       "locked": {
         "lastModified": 1746310409,
-        "narHash": "sha256-ZyPR16VvBPFD31v2gXKNzj9OfoURnJw94eOb8HPhRF0=",
-        "ref": "refs/heads/main",
+        "narHash": "sha256-iSyQZMaYjVfr+vb7jO0N9Bh8V9m51ZYUqxWd9BimUpQ=",
+        "owner": "hyprwm",
+        "repo": "Hyprland",
         "rev": "adbae0f74d951e06c575bad3c81a944027dfe413",
-        "revCount": 6072,
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
+        "type": "github"
       },
       "original": {
-        "submodules": true,
-        "type": "git",
-        "url": "https://github.com/hyprwm/Hyprland"
+        "owner": "hyprwm",
+        "repo": "Hyprland",
+        "type": "github"
       }
     },
     "hyprland-contrib": {
@@ -259,6 +257,36 @@
       "original": {
         "owner": "hyprwm",
         "repo": "contrib",
+        "type": "github"
+      }
+    },
+    "hyprland-plugins": {
+      "inputs": {
+        "hyprland": [
+          "hyprland"
+        ],
+        "nixpkgs": [
+          "hyprland-plugins",
+          "hyprland",
+          "nixpkgs"
+        ],
+        "systems": [
+          "hyprland-plugins",
+          "hyprland",
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746293931,
+        "narHash": "sha256-sy/iPiYNC5HT25S6BxR8CPXcu2g4j5T+5qSHkvMtDq4=",
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins",
+        "rev": "fcf1c2ae6f082b90152bede1ec0d0d52d9de2cbf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "hyprland-plugins",
         "type": "github"
       }
     },
@@ -585,11 +613,11 @@
         "treefmt-nix": "treefmt-nix_2"
       },
       "locked": {
-        "lastModified": 1746354383,
-        "narHash": "sha256-5SXSosJhUJOjveIzvFHIjXQ8rHq39zHfDp2fKSWLJkI=",
+        "lastModified": 1746366397,
+        "narHash": "sha256-eLivytoIgyu75s7CDjf1z5jLmTGPPONmi2zPayIUNsM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8ac6c576b34a0b5a0d07231ecea377c3b2c0a9a3",
+        "rev": "7882dfa39dad5ada77012882191e5c94b066a864",
         "type": "github"
       },
       "original": {
@@ -626,6 +654,7 @@
         "home-manager": "home-manager",
         "hyprland": "hyprland",
         "hyprland-contrib": "hyprland-contrib",
+        "hyprland-plugins": "hyprland-plugins",
         "nix-citizen": "nix-citizen",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_3",
