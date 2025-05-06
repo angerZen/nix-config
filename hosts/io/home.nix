@@ -37,7 +37,6 @@
     inherit (config.var) homeDirectory;
 
     packages = with pkgs; [
-      nautilus
       proton-pass
       protonmail-desktop
       vlc

@@ -6,7 +6,6 @@
   ];
 
   home.packages = with pkgs; [
-    nautilus
     pamixer
     pavucontrol
     hyprshot
@@ -38,8 +37,8 @@
       exec-once = [
         "startup"
         "${pkgs.hypridle}/bin/hypridle"
-        "exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
-        "exec-once=waypaper --restore"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "${pkgs.waypaper}/bin/waypaper --restore"
         "sleep 1 && swww init && sleep 1 && hyprlock && notify-send 'Hey $USER, Welcome back' &"
         "wl-paste --type text --watch cliphist store &"
         "wl-paste --type image --watch cliphist store &"
@@ -243,6 +242,5 @@
         ];
       };
     };
-    # extraConfig = "general:col.active_border = $color2 $color3 $color4 $color5 45deg";
   };
 }

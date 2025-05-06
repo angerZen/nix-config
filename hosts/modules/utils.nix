@@ -48,6 +48,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    nautilus
     fd
     bc
     gcc
