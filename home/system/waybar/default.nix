@@ -9,99 +9,118 @@
     settings = {
       mainBar = {
         layer = "top";
-        position = "right";
-        spacing = 0;
-        "margin-top" = 0;
-        "margin-bottom" = 0;
-        "margin-left" = 0;
-        "margin-right" = 0;
+        position = "top";
+        spacing = 8;
         #height = 28;
-        modules-left = ["custom/logo" "hyprland/workspaces"];
-        modules-center = ["clock" "tray"];
+
+        modules-left = [
+          "custom/logo"
+          "hyprland/workspaces"
+        ];
+
+        modules-center = [
+          "hyprland/window"
+        ];
+
         modules-right = [
+          "idle_inhibitor"
+          "pulseaudio"
           "network"
           "cpu"
           "memory"
-          "pulseaudio"
-          "pulseaudio#microphone"
-          "custom/wallpaper"
+          "temperature"
           "custom/power"
+          "custom/wallpaper"
+          "clock"
         ];
-        "wlr/taskbar" = {
-          format = "{icon}";
-          "on-click" = "activate";
-          "on-click-right" = "fullscreen";
 
-          "icon-size" = 28;
-          "tooltip-format" = "{title}";
-        };
         "hyprland/workspaces" = {
-          "on-click" = "activate";
-          format = "{icon}";
+          "disable-scroll" = true;
+          "all-outputs" = true;
+          "warp-on-scroll" = false;
+          "format" = "{name}";
           "format-icons" = {
-            "default" = "";
-            "1" = "1";
-            "2" = "2";
-            "3" = "3";
-            "4" = "4";
-            "5" = "5";
-            "6" = "6";
-            "7" = "7";
-            "8" = "8";
-            "9" = "9";
-            "active" = "󱓻";
-            "urgent" = "󱓻";
-          };
-          "persistent-workspaces" = {
-            "1" = [];
-            "2" = [];
-            "3" = [];
+            "urgent" = "";
+            "active" = "";
+            "default" = "";
           };
         };
 
-        tray = {spacing = 16;};
+        "idle_inhibitor" = {
+          "format" = "{icon}";
+          "format-icons" = {
+            "activated" = "";
+            "deactivated" = "";
+          };
+        };
+
         clock = {
           "tooltip-format" = "<tt>{calendar}</tt>";
           "format-alt" = "  {:%a, %d %b %Y}";
           format = "󰥔  {:%OI:%M %p}";
         };
+
         cpu = {
-          interval = 10;
           format = "{}%  ";
-          max-length = 10;
+          tooltip = true;
         };
+
         memory = {
-          interval = 30;
           format = "{}% ";
-          max-length = 10;
+          tooltip = true;
         };
+
+        "temperature" = {
+          "interval" = 10;
+          "hwmon-path" = "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input";
+          "critical-threshold" = 100;
+          "format-critical" = " {temperatureC}";
+          "format" = " {temperatureC}°C";
+        };
+
         pulseaudio = {
-          format = "{icon}";
-          "format-bluetooth" = "󰂰";
-          nospacing = 1;
-          "tooltip-format" = "Volume : {volume}%";
-          "format-muted" = "󰝟";
+          format = "{icon} {volume}%";
+          "format-bluetooth" = "{icon} {volume}%  {format_source}";
+          "format-bluetooth-muted" = " {icon} {format_source}";
+          "format-muted" = " {format_source}";
+          "format-source" = " {volume}%";
+          "format-source-muted" = "";
           "format-icons" = {
             "headphone" = "";
-            "default" = ["󰖀" "󰕾" ""];
+            "hands-free" = "";
+            "headset" = "";
+            "phone" = "";
+            "portable" = "";
+            "car" = "";
+            "default" = ["" "" ""];
           };
-          "on-click" = "pamixer -t";
-          "on-click-right" = "pavucontrol";
-          "scroll-step" = 1;
+          "on-click" = "pavucontrol";
         };
+        
+        "network" = {
+          "format-wifi" = "   {essid} ({signalStrength}%)";
+          "format-ethernet" = "{ipaddr}/{cidr} ";
+          "tooltip-format" = "{ifname} via {gwaddr} ";
+          "format-linked" = "{ifname} (No IP) ";
+          "format-disconnected" = "Disconnected ⚠";
+          "on-click" = "menu";
+        };
+
         "custom/logo" = {
-          format = "  ";
+          format = " ";
           tooltip = false;
           on-click = "menu";
         };
+
         "custom/wallpaper" = {
           format = "  ";
           on-click = "${pkgs.waypaper}/bin/waypaper";
           tooltip = true;
           tooltip-format = "Change wallpaper";
         };
+
         "custom/power" = {
-          format = "󰤆";
+          format = "󰤆  ";
           tooltip = false;
           on-click = "powermenu";
         };
@@ -109,273 +128,108 @@
     };
     style = ''
       @import '../../.cache/wal/colors-waybar.css';
-      @define-color active @color6;
       * {
-        font-size: 16px;
-        font-family: "JetBrainsMono Nerd Font,JetBrainsMono NF";
-        min-width: 8px;
-        min-height: 0px;
-        border: none;
-        border-radius: 0;
-        box-shadow: none;
-        text-shadow: none;
-        padding: 0px;
+        font-family: FontAwesome, sans-serif;
+        font-size: 15px;
       }
-      
+
       window#waybar {
-        transition-property: background-color;
-        transition-duration: 0.5s;
-        border-radius: 8px;
-        border: 2px solid @active;
+        color: @foreground;
+        font-family: SpaceMono Nerd Font, feather;
+      }
+
+      .modules-left,
+      .modules-center,
+      .modules-right
+      {
         background: @background;
-        background: alpha(@background, 0.7);
-        color: lighter(@active);
-      }
-      
-      menu,
-      tooltip {
-        border-radius: 8px;
-        padding: 2px;
-        border: 1px solid lighter(@active);
-        background: alpha(@background, 0.6);
-        color: lighter(@active);
-      }
-      
-      menu label,
-      tooltip label {
-        font-size: 14px;
-        color: lighter(@active);
-      }
-      
-      #submap,
-      #tray>.needs-attention {
-        animation-name: blink-active;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-      
-      .modules-right {
-        margin: 0px 6px 6px 6px;
-        border-radius: 4px;
-        background: alpha(@background, 0.4);
-        color: lighter(@active);
+        margin: 5px 10px;
+        padding: 0 5px;
+        border-radius: 15px;
       }
       
       .modules-left {
-        transition-property: background-color;
-        transition-duration: 0.5s;
-        margin: 6px 6px 6px 6px;
-        border-radius: 4px;
-        background: alpha(@background, 0.4);
-        color: lighter(@active);
+        padding: 0;
       }
 
-      #gcpu,
-      #custom-github,
+      .modules-center {
+        padding: 0 10px;
+      }
+
+      #clock,
+      #battery,
+      #cpu,
       #memory,
       #disk,
-      #together,
-      #submap,
-      #custom-weather,
-      #custom-recorder,
-      #connection,
-      #cnoti,
-      #brightness,
-      #power,
-      #custom-updates,
+      #temperature,
+      #backlight,
+      #network,
+      #pulseaudio,
+      #wireplumber,
+      #custom-media,
       #tray,
-      #audio,
-      #privacy,
-      #sound {
-        border-radius: 4px;
-        margin: 2px 2px 4px 2px;
-        background: alpha(darker(@active), 0.3);
+      #mode,
+      #idle_inhibitor,
+      #scratchpad,
+      #power-profiles-daemon,
+      #language,
+      #mpd {
+        padding: 0 10px;
+        border-radius: 15px;
       }
 
-      #custom-notifications {
-        padding-left: 4px;
-      }
-
-      #custom-hotspot,
-      #custom-github,
-      #custom-notifications {
-        font-size: 14px;
-      }
-
-      #custom-hotspot {
-        padding-right: 2px;
-      }
-
-      #custom-vpn,
-      #custom-hotspot {
-        background: alpha(darker(@active), 0.3);
+      #clock:hover,
+      #battery:hover,
+      #cpu:hover,
+      #memory:hover,
+      #disk:hover,
+      #temperature:hover,
+      #backlight:hover,
+      #network:hover,
+      #pulseaudio:hover,
+      #wireplumber:hover,
+      #custom-media:hover,
+      #tray:hover,
+      #mode:hover,
+      #idle_inhibitor:hover,
+      #scratchpad:hover,
+      #power-profiles-daemon:hover,
+      #language:hover,
+      #mpd:hover {
+        background: @background;
       }
       
-      #privacy-item {
-        padding: 6px 0px 6px 6px;
-      }
-
-      #gcpu {
-        padding: 8px 0px 8px 0px;
-      }
-
-      #custom-cpu-icon {
-        font-size: 25px;
-      }
-
-      #custom-cputemp,
-      #disk,
-      #memory,
-      #cpu {
-        font-size: 14px;
-        font-weight: bold;
-      }
-      
-      #custom-github {
-        padding-top: 2px;
-        padding-right: 4px;
-      }
-
-      #custom-dmark {
-        color: alpha(@foreground, 0.3);
-      }
-
-      #submap {
-        margin-bottom: 0px;
-      }
-
-      #workspaces {
-        margin: 0px 2px;
-        padding: 4px 0px 0px 0px;
-        border-radius: 8px;
-      }
-
       #workspaces button {
-        transition-property: background-color;
-        transition-duration: 0.5s;
-        color: @foreground;
         background: transparent;
-        border-radius: 4px;
-        color: alpha(@foreground, 0.3);
-      }
-
-      #workspaces button.urgent {
-        font-weight: bold;
+        font-family: SpaceMono Nerd Font, feather;
+        font-weight: 900;
+        font-size: 13pt;
         color: @foreground;
+        border:none;
+        border-radius: 15px;
       }
 
       #workspaces button.active {
-        padding: 4px 2px;
-        background: alpha(@active, 0.4);
-        color: lighter(@active);
-        border-radius: 4px;
-      }
-
-      #network.wifi {
-        padding-right: 4px;
-      }
-
-      #submap {
-        min-width: 0px;
-        margin: 4px 6px 4px 6px;
-      }
-
-      #custom-weather,
-      #tray {
-        padding: 4px 0px 4px 0px;
-      }
-
-      #bluetooth {
-        padding-top: 2px;
-      }
-
-      #battery {
-        border-radius: 8px;
-        padding: 4px 0px;
-        margin: 4px 2px 4px 2px;
-      }
-
-      #battery.discharging.warning {
-        animation-name: blink-yellow;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      #battery.discharging.critical {
-        animation-name: blink-red;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      #clock {
-        font-weight: bold;
-        padding: 4px 2px 2px 2px;
-      }
-
-      #pulseaudio.mic {
-        border-radius: 4px;
+        background: @color3;
         color: @background;
-        background: alpha(darker(@foreground), 0.6);
-        padding-left: 4px;
       }
 
-      #backlight-slider slider,
-      #pulseaudio-slider slider {
-        background-color: transparent;
+      #workspaces button:hover {
+        background: @color4;
+        color: @background;
         box-shadow: none;
       }
 
-      #backlight-slider trough,
-      #pulseaudio-slider trough {
-        margin-top: 4px;
-        min-width: 6px;
-        min-height: 60px;
-        border-radius: 8px;
-        background-color: alpha(@background, 0.6);
+      #custom-logo {
+        margin-left: 5px;
+        padding: 0 10px;
+        font-size: 25px;
+        transition: color .5s;
+        border: none;
       }
 
-      #backlight-slider highlight,
-      #pulseaudio-slider highlight {
-        border-radius: 8px;
-        background-color: lighter(@active);
-      }
-
-      #bluetooth.discoverable,
-      #bluetooth.discovering,
-      #bluetooth.pairable {
-        border-radius: 8px;
-        animation-name: blink-active;
-        animation-duration: 1s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      @keyframes blink-active {
-      to {
-          background-color: @active;
-          color: @foreground;
-        }
-      }
-
-      @keyframes blink-red {
-      to {
-          background-color: #c64d4f;
-          color: @foreground;
-        }
-      }
-
-      @keyframes blink-yellow {
-      to {
-          background-color: #cf9022;
-          color: @foreground;
-        }
+      #custom-logo:hover {
+        color: #1793d1;
       }
     '';
   };

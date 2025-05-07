@@ -23,7 +23,9 @@
       noto-fonts-emoji
       jetbrains-mono
       nerd-fonts.inconsolata
+      nerd-fonts.space-mono
       openmoji-color
+      font-awesome_5
     ];
 
     enableDefaultPackages = false;
