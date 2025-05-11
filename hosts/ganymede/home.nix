@@ -8,7 +8,7 @@
 
     # Programs
     ../../home/programs/btop
-    ../../home/programs/vivaldi
+    # ../../home/programs/vivaldi
     ../../home/programs/alacritty
     ../../home/programs/neofetch
     ../../home/programs/git
@@ -20,17 +20,17 @@
     ../../home/scripts # All scripts
 
     # System (Desktop environment like stuff)
-    ../../home/system/mako
-    ../../home/system/gtk
-    ../../home/system/zathura
-    ../../home/system/hyprland
-    ../../home/system/waybar
-    ../../home/system/wlogout
-    ../../home/system/wofi
+    # ../../home/system/mako
+    # ../../home/system/gtk
+    # ../../home/system/zathura
+    # ../../home/system/hyprland
+    # ../../home/system/waybar
+    # ../../home/system/wlogout
+    # ../../home/system/wofi
     ../../home/system/udiskie
-    ../../home/system/pywal
+    # ../../home/system/pywal
     # ../../home/system/wallust
-    ../../home/system/waypaper
+    # ../../home/system/waypaper
   ];
 
   home = {
