@@ -1,5 +1,5 @@
 {
-  lib,
+  pkgs,
   config,
   ...
 }: {
@@ -7,9 +7,13 @@
   services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
 
   environment.variables = {
-    NIXOS_OZONE_WL = "1";
     __GL_GSYNC_ALLOWED = "1";
   };
+
+  environment.systemPackages = with pkgs; [
+    nvidia-vaapi-driver
+    libva-utils
+  ];
 
   hardware = {
     graphics = {
