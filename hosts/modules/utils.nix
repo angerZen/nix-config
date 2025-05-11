@@ -15,20 +15,9 @@
   console.keyMap = config.var.keyboardLayout;
 
   environment.variables = {
-    XDG_DATA_HOME = "$HOME/.local/share";
-    PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
-    EDITOR = "vscode";
-    QT_QPA_PLATFORM = "wayland;xcb";
-    GDK_BACKEND = "wayland,x11,*";
     NIXOS_OZONE_WL = "1";
-    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
     MOZ_ENABLE_WAYLAND = "1";
-    OZONE_PLATFORM = "wayland";
-    EGL_PLATFORM = "wayland";
-    CLUTTER_BACKEND = "wayland";
-    SDL_VIDEODRIVER = "wayland";
-    QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    QT_QPA_PLATFORMTHEME = "qt6ct";
     QT_AUTO_SCREEN_SCALE_FACTOR = "0.8";
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
   };

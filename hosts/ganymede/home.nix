@@ -12,7 +12,6 @@
     ../../home/programs/alacritty
     ../../home/programs/neofetch
     ../../home/programs/git
-    ../../home/programs/vscode
     ../../home/programs/discord
     ../../home/programs/games
 
@@ -42,6 +41,7 @@
       protonmail-desktop
       vlc
       firefox
+      vscode
 
       # Dev
       nixd
@@ -59,10 +59,6 @@
       imv
       dconf
       rocketchat-desktop
-      qt6Packages.qtstyleplugin-kvantum
-      qt6Packages.qt6ct
-      libsForQt5.qtstyleplugin-kvantum
-      libsForQt5.qt5ct
     ];
 
     # Import wallpapers into $HOME/wallpapers
