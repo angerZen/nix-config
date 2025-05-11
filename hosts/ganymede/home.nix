@@ -41,6 +41,7 @@
       proton-pass
       protonmail-desktop
       vlc
+      firefox
 
       # Dev
       nixd
