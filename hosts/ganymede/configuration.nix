@@ -18,6 +18,8 @@
     ../modules/utils.nix
     ../modules/steam.nix
 
+    ../../home/system/niri
+
     ./hardware-configuration.nix
     ./variables.nix
   ];
