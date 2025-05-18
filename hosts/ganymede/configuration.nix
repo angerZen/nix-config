@@ -1,4 +1,4 @@
-{config, ...}: {
+{pkgs, config, ...}: {
   imports = [
     ../modules/fonts.nix
     ../modules/nvidia.nix
@@ -26,6 +26,11 @@
   
   boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
   home-manager.users."${config.var.username}" = import ./home.nix;
+
+  programs.coolercontrol = {
+    enable = true;
+    nvidiaSupport = true;
+  };
 
   # Don't touch this
   system.stateVersion = "24.05";
