@@ -10,10 +10,11 @@
     ../../home/programs/btop
     # ../../home/programs/vivaldi
     ../../home/programs/alacritty
-    ../../home/programs/neofetch
     ../../home/programs/git
     ../../home/programs/discord
     ../../home/programs/games
+    ../../home/programs/starship
+    ../../home/programs/zsh
 
     # Scripts
     ../../home/scripts # All scripts
