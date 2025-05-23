@@ -40,6 +40,7 @@
   outputs = {
     self,
     nixpkgs,
+    home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -51,6 +52,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
           ./hosts/ganymede/configuration.nix
         ];
       };
@@ -58,6 +63,10 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+          }
           ./hosts/io/configuration.nix
         ];
       };
